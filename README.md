@@ -1,6 +1,6 @@
 # Filin's Stack
 
-A portable snapshot of my Codex skills and global agent instructions. Clone it on another computer, then copy the pieces you want into your Codex home directory.
+A portable snapshot of Codex skills and global agent instructions. Clone it on another computer and install only the pieces you need.
 
 ## Contents
 
@@ -16,8 +16,13 @@ A portable snapshot of my Codex skills and global agent instructions. Clone it o
 | `skills/last30days` | Research recent public discussion. |
 | `skills/launch-subagent` | Delegate bounded tasks to subagents. |
 | `skills/lean-build` | Keep feature work focused. |
+| `skills/level-up` | Assess knowledge with seven adaptive questions. |
+| `skills/show-me` | Explain ideas with small diagrams and visual sketches. |
+| `skills/skill-cleaner` | Audit skill usage, duplicates, and prompt cost. |
 | `skills/surgical-patch` | Make narrow, verified bug fixes. |
 | `skills/thermo-nuclear-code-quality-review` | Run a strict maintainability review. |
+| `skills/verify-and-stop` | Check acceptance criteria and stop when proven. |
+| `skills/verify-this` | Test a specific claim against fresh evidence. |
 
 ## Install on another computer
 
@@ -43,4 +48,8 @@ foreach ($skill in $skills) {
 Copy-Item .\global\AGENTS.md $rules
 ```
 
-These are snapshots of installed skills, not an automatic updater. Some skills need optional external tools or credentials; see their `SKILL.md` files. `last30days` comes from [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) under MIT; its license and the bundled client's license are included in that directory.
+On macOS or Linux, follow the same paths and check for existing files before copying. These are snapshots, not an automatic updater. Review changes before replacing an installed copy.
+
+`skill-cleaner` needs a Node runtime with `--experimental-strip-types`. After installing it, run `npm ci --ignore-scripts --no-audit --no-fund` from its directory; `node_modules` is not tracked. Other skills may need external tools or credentials; consult their `SKILL.md` files. `level-up` writes learning notes inside the active project.
+
+`last30days` comes from [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) under MIT. Its license and the bundled client's license are included in that directory. No repository-wide license has been selected for the other files.

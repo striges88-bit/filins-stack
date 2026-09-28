@@ -1,0 +1,8 @@
+{
+  "name": "skill-cleaner",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "smol-toml": "1.8.0"
+  }
+}
