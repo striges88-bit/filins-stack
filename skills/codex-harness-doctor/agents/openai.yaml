@@ -1,0 +1,14 @@
+interface:
+  display_name: Codex Harness Doctor
+  short_description: Audit Codex harness overhead and failures
+  default_prompt: Use $codex-harness-doctor to run a read-only quick audit of this
+    repository harness.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
