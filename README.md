@@ -7,6 +7,7 @@ A portable snapshot of Codex skills and global agent instructions. Clone it on a
 | Path | Purpose |
 | --- | --- |
 | `global/AGENTS.md` | Global rules for how the agent works. |
+| [`bundles/caveman`](bundles/caveman) | Pinned Codex adaptation, guarded lifecycle, read-only upstream monitor and complete architecture map. |
 | `skills/codex-harness-doctor` | Diagnose Codex setup and performance. |
 | `skills/defuddle` | Extract readable Markdown from web pages. |
 | `skills/deslop` | Remove unnecessary AI-generated code. |
@@ -53,3 +54,5 @@ On macOS or Linux, follow the same paths and check for existing files before cop
 `skill-cleaner` needs a Node runtime with `--experimental-strip-types`. After installing it, run `npm ci --ignore-scripts --no-audit --no-fund` from its directory; `node_modules` is not tracked. Other skills may need external tools or credentials; consult their `SKILL.md` files. `level-up` writes learning notes inside the active project.
 
 `last30days` comes from [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) under MIT. Its license and the bundled client's license are included in that directory. No repository-wide license has been selected for the other files.
+
+The Caveman bundle has a separate reviewed lifecycle. The skill-copy example above does not install or update its runtime. See its [bundle instructions](bundles/caveman/README.md) and [architecture](bundles/caveman/assets/architecture.png). Upstream changes require manual security and compatibility review.

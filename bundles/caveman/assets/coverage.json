@@ -1,0 +1,2445 @@
+{
+  "dimensions": [
+    4000,
+    4200
+  ],
+  "records": 125,
+  "visible_labels": 125,
+  "missing_ids": [],
+  "duplicate_ids": 0,
+  "conditional_inventory_edges": 207,
+  "all_inventory_endpoints_exist": true,
+  "all_sources_pinned": true,
+  "public_path_scan": "PASS",
+  "coverage": {
+    "response": {
+      "group": "Policy, skills and delegation",
+      "label": "Response voice",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2054
+      ]
+    },
+    "core": {
+      "group": "Policy, skills and delegation",
+      "label": "Architecture-first Core",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2081
+      ]
+    },
+    "skill-cavecrew": {
+      "group": "Policy, skills and delegation",
+      "label": "cavecrew",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2108
+      ]
+    },
+    "skill-caveman-commit": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-commit",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2135
+      ]
+    },
+    "skill-caveman-compress": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-compress",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2162
+      ]
+    },
+    "skill-caveman-discover": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-discover",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2189
+      ]
+    },
+    "skill-caveman-evidence-review": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-evidence-review",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2216
+      ]
+    },
+    "skill-caveman-explore": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-explore",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2243
+      ]
+    },
+    "skill-caveman-help": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-help",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2270
+      ]
+    },
+    "skill-caveman-learn": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-learn",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2297
+      ]
+    },
+    "skill-caveman-manage": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-manage",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2324
+      ]
+    },
+    "skill-caveman-optimize": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-optimize",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2351
+      ]
+    },
+    "skill-caveman-review": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-review",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2378
+      ]
+    },
+    "skill-caveman-setup": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-setup",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2405
+      ]
+    },
+    "skill-caveman-stats": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman-stats",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2432
+      ]
+    },
+    "skill-caveman": {
+      "group": "Policy, skills and delegation",
+      "label": "caveman",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2459
+      ]
+    },
+    "skill-investigate-first": {
+      "group": "Policy, skills and delegation",
+      "label": "investigate-first",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2486
+      ]
+    },
+    "skill-lean-build": {
+      "group": "Policy, skills and delegation",
+      "label": "lean-build",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2513
+      ]
+    },
+    "skill-megacave": {
+      "group": "Policy, skills and delegation",
+      "label": "megacave",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2540
+      ]
+    },
+    "skill-migration": {
+      "group": "Policy, skills and delegation",
+      "label": "migration",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2567
+      ]
+    },
+    "skill-safe-refactor": {
+      "group": "Policy, skills and delegation",
+      "label": "safe-refactor",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2594
+      ]
+    },
+    "skill-surgical-patch": {
+      "group": "Policy, skills and delegation",
+      "label": "surgical-patch",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2621
+      ]
+    },
+    "skill-ultracave": {
+      "group": "Policy, skills and delegation",
+      "label": "ultracave",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2648
+      ]
+    },
+    "skill-verify-and-stop": {
+      "group": "Policy, skills and delegation",
+      "label": "verify-and-stop",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2675
+      ]
+    },
+    "cavecrew-investigator": {
+      "group": "Policy, skills and delegation",
+      "label": "Cavecrew investigator",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2702
+      ]
+    },
+    "cavecrew-builder": {
+      "group": "Policy, skills and delegation",
+      "label": "Cavecrew builder",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2729
+      ]
+    },
+    "cavecrew-reviewer": {
+      "group": "Policy, skills and delegation",
+      "label": "Cavecrew reviewer",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2756
+      ]
+    },
+    "delegate": {
+      "group": "Policy, skills and delegation",
+      "label": "Optional caveman-delegate MCP",
+      "panel": [
+        70,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        96,
+        2783
+      ]
+    },
+    "host": {
+      "group": "Host, CLI and routing",
+      "label": "Existing agent or application",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2054
+      ]
+    },
+    "cli": {
+      "group": "Host, CLI and routing",
+      "label": "caveman CLI",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2081
+      ]
+    },
+    "wrap": {
+      "group": "Host, CLI and routing",
+      "label": "Agent wrapping and profiles",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2108
+      ]
+    },
+    "profiles": {
+      "group": "Host, CLI and routing",
+      "label": "Declarative agent profiles",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2135
+      ]
+    },
+    "hooks": {
+      "group": "Host, CLI and routing",
+      "label": "Lifecycle hooks and native event adapter",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2162
+      ]
+    },
+    "native-runtime": {
+      "group": "Host, CLI and routing",
+      "label": "Native task and working-memory runtime",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2189
+      ]
+    },
+    "native-plugins": {
+      "group": "Host, CLI and routing",
+      "label": "Hermes, OpenClaw and OpenCode plugins",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2216
+      ]
+    },
+    "proxy": {
+      "group": "Host, CLI and routing",
+      "label": "caveman-proxy",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2243
+      ]
+    },
+    "provider-routing": {
+      "group": "Host, CLI and routing",
+      "label": "Provider adapters and credential mapping",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2270
+      ]
+    },
+    "providers": {
+      "group": "Host, CLI and routing",
+      "label": "Selected model provider",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2297
+      ]
+    },
+    "security": {
+      "group": "Host, CLI and routing",
+      "label": "Provider network and local trust guards",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2324
+      ]
+    },
+    "configuration": {
+      "group": "Host, CLI and routing",
+      "label": "Feature config and proxy YAML control",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2351
+      ]
+    },
+    "token-counter": {
+      "group": "Accounting, Learn and contracts",
+      "label": "Offline token counter",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2440
+      ]
+    },
+    "usage-store": {
+      "group": "Accounting, Learn and contracts",
+      "label": "Local usage and replacement-cache SQLite",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2467
+      ]
+    },
+    "cache": {
+      "group": "Accounting, Learn and contracts",
+      "label": "Prompt-cache planner and replacement stability",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2494
+      ]
+    },
+    "stats": {
+      "group": "Accounting, Learn and contracts",
+      "label": "CLI stats and accounting dashboard",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2521
+      ]
+    },
+    "learn": {
+      "group": "Accounting, Learn and contracts",
+      "label": "Local Learn scanner and report",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2548
+      ]
+    },
+    "learn-autopilot": {
+      "group": "Accounting, Learn and contracts",
+      "label": "Learn autopilot event loop",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2575
+      ]
+    },
+    "contracts": {
+      "group": "Accounting, Learn and contracts",
+      "label": "Shared JSON Schema contracts",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2602
+      ]
+    },
+    "provider-catalog": {
+      "group": "Accounting, Learn and contracts",
+      "label": "Dated provider price catalog",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2629
+      ]
+    },
+    "tracing": {
+      "group": "Accounting, Learn and contracts",
+      "label": "SDK traces and OpenTelemetry",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2656
+      ]
+    },
+    "benchmarks": {
+      "group": "Accounting, Learn and contracts",
+      "label": "Eval and subagent-tax tooling",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2683
+      ]
+    },
+    "mode-evaluation": {
+      "group": "Accounting, Learn and contracts",
+      "label": "Recommend, shadow, canary and active modes",
+      "panel": [
+        1380,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        1406,
+        2710
+      ]
+    },
+    "sdk": {
+      "group": "SDK and framework adapters",
+      "label": "TypeScript and Python agent SDK",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2054
+      ]
+    },
+    "middleware": {
+      "group": "SDK and framework adapters",
+      "label": "TypeScript and Python framework middleware",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2081
+      ]
+    },
+    "middleware-runtime": {
+      "group": "SDK and framework adapters",
+      "label": "Scoped middleware service",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2108
+      ]
+    },
+    "middleware-store": {
+      "group": "SDK and framework adapters",
+      "label": "Middleware scoped originals and plans",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2135
+      ]
+    },
+    "middleware-security": {
+      "group": "SDK and framework adapters",
+      "label": "Middleware identity and transport gates",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2162
+      ]
+    },
+    "framework-adapters": {
+      "group": "SDK and framework adapters",
+      "label": "Framework adapter families",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2189
+      ]
+    },
+    "adapter-ts-ai-sdk": {
+      "group": "SDK and framework adapters",
+      "label": "TypeScript ai-sdk adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2216
+      ]
+    },
+    "adapter-ts-openai": {
+      "group": "SDK and framework adapters",
+      "label": "TypeScript openai adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2243
+      ]
+    },
+    "adapter-ts-anthropic": {
+      "group": "SDK and framework adapters",
+      "label": "TypeScript anthropic adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2270
+      ]
+    },
+    "adapter-ts-langchain": {
+      "group": "SDK and framework adapters",
+      "label": "TypeScript langchain adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2297
+      ]
+    },
+    "adapter-ts-google": {
+      "group": "SDK and framework adapters",
+      "label": "TypeScript google adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2324
+      ]
+    },
+    "adapter-ts-strands": {
+      "group": "SDK and framework adapters",
+      "label": "TypeScript strands adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2351
+      ]
+    },
+    "adapter-ts-mastra": {
+      "group": "SDK and framework adapters",
+      "label": "TypeScript mastra adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2378
+      ]
+    },
+    "adapter-ts-mcp": {
+      "group": "SDK and framework adapters",
+      "label": "TypeScript mcp adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2405
+      ]
+    },
+    "adapter-py-langchain": {
+      "group": "SDK and framework adapters",
+      "label": "Python langchain adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2432
+      ]
+    },
+    "adapter-py-openai": {
+      "group": "SDK and framework adapters",
+      "label": "Python openai adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2459
+      ]
+    },
+    "adapter-py-anthropic": {
+      "group": "SDK and framework adapters",
+      "label": "Python anthropic adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2486
+      ]
+    },
+    "adapter-py-litellm": {
+      "group": "SDK and framework adapters",
+      "label": "Python litellm adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2513
+      ]
+    },
+    "adapter-py-google": {
+      "group": "SDK and framework adapters",
+      "label": "Python google adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2540
+      ]
+    },
+    "adapter-py-strands": {
+      "group": "SDK and framework adapters",
+      "label": "Python strands adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2567
+      ]
+    },
+    "adapter-py-agno": {
+      "group": "SDK and framework adapters",
+      "label": "Python agno adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2594
+      ]
+    },
+    "adapter-py-crewai": {
+      "group": "SDK and framework adapters",
+      "label": "Python crewai adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2621
+      ]
+    },
+    "adapter-py-pydantic-ai": {
+      "group": "SDK and framework adapters",
+      "label": "Python pydantic-ai adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2648
+      ]
+    },
+    "adapter-py-autogen": {
+      "group": "SDK and framework adapters",
+      "label": "Python autogen adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2675
+      ]
+    },
+    "adapter-py-llama-index": {
+      "group": "SDK and framework adapters",
+      "label": "Python llama-index adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2702
+      ]
+    },
+    "adapter-py-mcp": {
+      "group": "SDK and framework adapters",
+      "label": "Python mcp adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2729
+      ]
+    },
+    "adapter-py-asgi": {
+      "group": "SDK and framework adapters",
+      "label": "Python asgi adapter",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2756
+      ]
+    },
+    "pi-extension": {
+      "group": "SDK and framework adapters",
+      "label": "@caveman-ai/pi extension",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2783
+      ]
+    },
+    "sdk-ts-package": {
+      "group": "SDK and framework adapters",
+      "label": "@caveman-ai/sdk",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2810
+      ]
+    },
+    "sdk-py-package": {
+      "group": "SDK and framework adapters",
+      "label": "caveman-sdk / caveman_cloud",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2837
+      ]
+    },
+    "middleware-ts-package": {
+      "group": "SDK and framework adapters",
+      "label": "@caveman-ai/middleware",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2864
+      ]
+    },
+    "middleware-py-package": {
+      "group": "SDK and framework adapters",
+      "label": "caveman-middleware",
+      "panel": [
+        2690,
+        1990,
+        1240,
+        960
+      ],
+      "label_position": [
+        2716,
+        2891
+      ]
+    },
+    "engine": {
+      "group": "Engine and transformations",
+      "label": "Caveman Engine",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3034
+      ]
+    },
+    "detector": {
+      "group": "Engine and transformations",
+      "label": "Automatic shape detector",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3061
+      ]
+    },
+    "compressors": {
+      "group": "Engine and transformations",
+      "label": "Compressor registry",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3088
+      ]
+    },
+    "toon": {
+      "group": "Engine and transformations",
+      "label": "TOON encode/decode",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3115
+      ]
+    },
+    "mode-record": {
+      "group": "Engine and transformations",
+      "label": "Record mode",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3142
+      ]
+    },
+    "mode-compress": {
+      "group": "Engine and transformations",
+      "label": "Compress mode",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3169
+      ]
+    },
+    "wasm": {
+      "group": "Engine and transformations",
+      "label": "Engine WebAssembly runtime",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3196
+      ]
+    },
+    "compressor-json": {
+      "group": "Engine and transformations",
+      "label": "JSON compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3223
+      ]
+    },
+    "compressor-log": {
+      "group": "Engine and transformations",
+      "label": "log compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3250
+      ]
+    },
+    "compressor-code": {
+      "group": "Engine and transformations",
+      "label": "code compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3277
+      ]
+    },
+    "compressor-diff": {
+      "group": "Engine and transformations",
+      "label": "diff compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3304
+      ]
+    },
+    "compressor-search-result": {
+      "group": "Engine and transformations",
+      "label": "search-result compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3331
+      ]
+    },
+    "compressor-text": {
+      "group": "Engine and transformations",
+      "label": "text compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3358
+      ]
+    },
+    "compressor-html": {
+      "group": "Engine and transformations",
+      "label": "HTML compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3385
+      ]
+    },
+    "compressor-tabular": {
+      "group": "Engine and transformations",
+      "label": "tabular compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3412
+      ]
+    },
+    "compressor-configuration": {
+      "group": "Engine and transformations",
+      "label": "configuration compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3439
+      ]
+    },
+    "compressor-tool-schema": {
+      "group": "Engine and transformations",
+      "label": "tool-schema compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3466
+      ]
+    },
+    "compressor-tool-schema-annotations": {
+      "group": "Engine and transformations",
+      "label": "tool-schema-annotations compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3493
+      ]
+    },
+    "compressor-toon": {
+      "group": "Engine and transformations",
+      "label": "TOON compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3520
+      ]
+    },
+    "compressor-accessibility-tree": {
+      "group": "Engine and transformations",
+      "label": "accessibility-tree compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3547
+      ]
+    },
+    "compressor-repetition": {
+      "group": "Engine and transformations",
+      "label": "repetition compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3574
+      ]
+    },
+    "compressor-terminal-output": {
+      "group": "Engine and transformations",
+      "label": "terminal-output compressor",
+      "panel": [
+        70,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        96,
+        3601
+      ]
+    },
+    "ccr": {
+      "group": "Tools, Browse and exact recovery",
+      "label": "CCR exact-original store",
+      "panel": [
+        1380,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        1406,
+        3034
+      ]
+    },
+    "retrieve": {
+      "group": "Tools, Browse and exact recovery",
+      "label": "CCR recovery operations",
+      "panel": [
+        1380,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        1406,
+        3061
+      ]
+    },
+    "engine-mcp": {
+      "group": "Tools, Browse and exact recovery",
+      "label": "caveman-mcp",
+      "panel": [
+        1380,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        1406,
+        3088
+      ]
+    },
+    "output-shrink": {
+      "group": "Tools, Browse and exact recovery",
+      "label": "CLI command-output shrink wrapper",
+      "panel": [
+        1380,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        1406,
+        3115
+      ]
+    },
+    "catalog-shrink": {
+      "group": "Tools, Browse and exact recovery",
+      "label": "Native caveman-shrink tool-catalog binary",
+      "panel": [
+        1380,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        1406,
+        3142
+      ]
+    },
+    "legacy-catalog-proxy": {
+      "group": "Tools, Browse and exact recovery",
+      "label": "Legacy JS caveman-shrink MCP stdio proxy",
+      "panel": [
+        1380,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        1406,
+        3169
+      ]
+    },
+    "browser": {
+      "group": "Tools, Browse and exact recovery",
+      "label": "caveman-browse CDP bridge",
+      "panel": [
+        1380,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        1406,
+        3196
+      ]
+    },
+    "chrome": {
+      "group": "Tools, Browse and exact recovery",
+      "label": "Isolated Chrome browser",
+      "panel": [
+        1380,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        1406,
+        3223
+      ]
+    },
+    "browser-adapters": {
+      "group": "Tools, Browse and exact recovery",
+      "label": "Browser CLI and MCP host adapters",
+      "panel": [
+        1380,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        1406,
+        3250
+      ]
+    },
+    "extension": {
+      "group": "Tools, Browse and exact recovery",
+      "label": "MV3 web response-style extension",
+      "panel": [
+        1380,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        1406,
+        3277
+      ]
+    },
+    "pixel": {
+      "group": "Optional network and memory",
+      "label": "Pixel text-to-image transport",
+      "panel": [
+        2690,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        2716,
+        3034
+      ]
+    },
+    "memory": {
+      "group": "Optional network and memory",
+      "label": "Cavemem",
+      "panel": [
+        2690,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        2716,
+        3061
+      ]
+    },
+    "memory-clients": {
+      "group": "Optional network and memory",
+      "label": "Cavemem Go, JS and Python clients",
+      "panel": [
+        2690,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        2716,
+        3088
+      ]
+    },
+    "cloud": {
+      "group": "Optional network and memory",
+      "label": "Connected Caveman Cloud commands",
+      "panel": [
+        2690,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        2716,
+        3115
+      ]
+    },
+    "cloud-control": {
+      "group": "Optional network and memory",
+      "label": "Cloud control API and read MCP",
+      "panel": [
+        2690,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        2716,
+        3142
+      ]
+    },
+    "managed-gateway": {
+      "group": "Optional network and memory",
+      "label": "Managed Caveman inference gateway",
+      "panel": [
+        2690,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        2716,
+        3169
+      ]
+    },
+    "cloud-sync": {
+      "group": "Optional network and memory",
+      "label": "Authenticated dashboard metadata sync",
+      "panel": [
+        2690,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        2716,
+        3196
+      ]
+    },
+    "telemetry": {
+      "group": "Optional network and memory",
+      "label": "CLI content-free usage telemetry",
+      "panel": [
+        2690,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        2716,
+        3223
+      ]
+    },
+    "device-auth": {
+      "group": "Optional network and memory",
+      "label": "Device-auth package",
+      "panel": [
+        2690,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        2716,
+        3250
+      ]
+    },
+    "mode-pixel": {
+      "group": "Optional network and memory",
+      "label": "Pixel mode",
+      "panel": [
+        2690,
+        2970,
+        1240,
+        900
+      ],
+      "label_position": [
+        2716,
+        3277
+      ]
+    }
+  },
+  "diagram_nodes": [
+    "tools",
+    "output-shrink",
+    "host",
+    "proxy",
+    "providers",
+    "browser",
+    "ax",
+    "ccr",
+    "engine",
+    "pixel",
+    "policy",
+    "learn",
+    "memory",
+    "middleware",
+    "managed-gateway",
+    "native-runtime",
+    "history",
+    "middleware-store",
+    "cloud-control"
+  ],
+  "main_map_edges": [
+    {
+      "source": "tools",
+      "target": "output-shrink",
+      "condition": "optional",
+      "conditional": true,
+      "points": [
+        [
+          720,
+          380
+        ],
+        [
+          850,
+          380
+        ]
+      ]
+    },
+    {
+      "source": "output-shrink",
+      "target": "host",
+      "condition": "overview",
+      "conditional": true,
+      "points": [
+        [
+          1500,
+          380
+        ],
+        [
+          1630,
+          380
+        ]
+      ]
+    },
+    {
+      "source": "host",
+      "target": "proxy",
+      "condition": "configured route",
+      "conditional": true,
+      "points": [
+        [
+          2280,
+          380
+        ],
+        [
+          2440,
+          380
+        ]
+      ]
+    },
+    {
+      "source": "proxy",
+      "target": "providers",
+      "condition": "provider API",
+      "conditional": false,
+      "points": [
+        [
+          3090,
+          380
+        ],
+        [
+          3250,
+          380
+        ]
+      ]
+    },
+    {
+      "source": "tools",
+      "target": "host",
+      "condition": "exact-output bypass",
+      "conditional": false,
+      "points": [
+        [
+          400,
+          280
+        ],
+        [
+          400,
+          230
+        ],
+        [
+          1780,
+          230
+        ],
+        [
+          1780,
+          280
+        ]
+      ]
+    },
+    {
+      "source": "providers",
+      "target": "host",
+      "condition": "model result to host",
+      "conditional": false,
+      "points": [
+        [
+          3600,
+          280
+        ],
+        [
+          3600,
+          180
+        ],
+        [
+          2180,
+          180
+        ],
+        [
+          2180,
+          280
+        ]
+      ]
+    },
+    {
+      "source": "host",
+      "target": "tools",
+      "condition": "host executes tool calls",
+      "conditional": false,
+      "points": [
+        [
+          1955,
+          480
+        ],
+        [
+          1955,
+          550
+        ],
+        [
+          400,
+          550
+        ],
+        [
+          400,
+          480
+        ]
+      ]
+    },
+    {
+      "source": "browser",
+      "target": "ax",
+      "condition": "raw AX",
+      "conditional": false,
+      "points": [
+        [
+          720,
+          800
+        ],
+        [
+          850,
+          800
+        ]
+      ]
+    },
+    {
+      "source": "ax",
+      "target": "ccr",
+      "condition": "store raw",
+      "conditional": false,
+      "points": [
+        [
+          1500,
+          800
+        ],
+        [
+          1630,
+          800
+        ]
+      ]
+    },
+    {
+      "source": "ccr",
+      "target": "host",
+      "condition": "refs / retrieve",
+      "conditional": false,
+      "points": [
+        [
+          1955,
+          700
+        ],
+        [
+          1955,
+          550
+        ],
+        [
+          2150,
+          550
+        ],
+        [
+          2150,
+          480
+        ]
+      ]
+    },
+    {
+      "source": "output-shrink",
+      "target": "ccr",
+      "condition": "retain original",
+      "conditional": true,
+      "points": [
+        [
+          1200,
+          480
+        ],
+        [
+          1200,
+          620
+        ],
+        [
+          1760,
+          620
+        ],
+        [
+          1760,
+          700
+        ]
+      ]
+    },
+    {
+      "source": "proxy",
+      "target": "engine",
+      "condition": "eligible input",
+      "conditional": true,
+      "points": [
+        [
+          2680,
+          480
+        ],
+        [
+          2680,
+          700
+        ]
+      ]
+    },
+    {
+      "source": "engine",
+      "target": "proxy",
+      "condition": "safe replacement",
+      "conditional": true,
+      "points": [
+        [
+          2890,
+          700
+        ],
+        [
+          2890,
+          480
+        ]
+      ]
+    },
+    {
+      "source": "engine",
+      "target": "ccr",
+      "condition": "store / recover",
+      "conditional": false,
+      "points": [
+        [
+          2440,
+          820
+        ],
+        [
+          2280,
+          820
+        ]
+      ]
+    },
+    {
+      "source": "engine",
+      "target": "pixel",
+      "condition": "allowlisted",
+      "conditional": true,
+      "points": [
+        [
+          3090,
+          800
+        ],
+        [
+          3250,
+          800
+        ]
+      ]
+    },
+    {
+      "source": "pixel",
+      "target": "providers",
+      "condition": "optional transport",
+      "conditional": true,
+      "points": [
+        [
+          3580,
+          700
+        ],
+        [
+          3580,
+          480
+        ]
+      ]
+    },
+    {
+      "source": "host",
+      "target": "middleware",
+      "condition": "copied outbound request",
+      "conditional": true,
+      "points": [
+        [
+          2280,
+          430
+        ],
+        [
+          2360,
+          430
+        ],
+        [
+          2360,
+          1000
+        ],
+        [
+          2640,
+          1000
+        ],
+        [
+          2640,
+          1120
+        ]
+      ]
+    },
+    {
+      "source": "middleware",
+      "target": "engine",
+      "condition": "executor-bound",
+      "conditional": true,
+      "points": [
+        [
+          2920,
+          1120
+        ],
+        [
+          2920,
+          1035
+        ],
+        [
+          3010,
+          1035
+        ],
+        [
+          3010,
+          920
+        ]
+      ]
+    },
+    {
+      "source": "middleware",
+      "target": "middleware-store",
+      "condition": "scoped recovery",
+      "conditional": true,
+      "points": [
+        [
+          2770,
+          1340
+        ],
+        [
+          2770,
+          1500
+        ]
+      ]
+    },
+    {
+      "source": "middleware",
+      "target": "providers",
+      "condition": "direct SDK inference",
+      "conditional": true,
+      "points": [
+        [
+          3090,
+          1210
+        ],
+        [
+          3170,
+          1210
+        ],
+        [
+          3170,
+          580
+        ],
+        [
+          3380,
+          580
+        ],
+        [
+          3380,
+          480
+        ]
+      ]
+    },
+    {
+      "source": "proxy",
+      "target": "managed-gateway",
+      "condition": "selected hosted route",
+      "conditional": true,
+      "points": [
+        [
+          3090,
+          430
+        ],
+        [
+          3130,
+          430
+        ],
+        [
+          3130,
+          1000
+        ],
+        [
+          3470,
+          1000
+        ],
+        [
+          3470,
+          1120
+        ]
+      ]
+    },
+    {
+      "source": "managed-gateway",
+      "target": "providers",
+      "condition": "ordinary path",
+      "conditional": true,
+      "points": [
+        [
+          3900,
+          1210
+        ],
+        [
+          3950,
+          1210
+        ],
+        [
+          3950,
+          380
+        ],
+        [
+          3900,
+          380
+        ]
+      ]
+    },
+    {
+      "source": "cloud-control",
+      "target": "managed-gateway",
+      "condition": "auth / control",
+      "conditional": true,
+      "points": [
+        [
+          3570,
+          1500
+        ],
+        [
+          3570,
+          1340
+        ]
+      ]
+    },
+    {
+      "source": "history",
+      "target": "cloud-control",
+      "condition": "metadata-only sync when authorized",
+      "conditional": true,
+      "points": [
+        [
+          1500,
+          1630
+        ],
+        [
+          1570,
+          1630
+        ],
+        [
+          1570,
+          1780
+        ],
+        [
+          3590,
+          1780
+        ],
+        [
+          3590,
+          1720
+        ]
+      ]
+    },
+    {
+      "source": "memory",
+      "target": "host",
+      "condition": "recall / write",
+      "conditional": true,
+      "points": [
+        [
+          2280,
+          1230
+        ],
+        [
+          2320,
+          1230
+        ],
+        [
+          2320,
+          500
+        ],
+        [
+          2230,
+          500
+        ],
+        [
+          2230,
+          480
+        ]
+      ]
+    },
+    {
+      "source": "host",
+      "target": "memory",
+      "condition": "optional memory write",
+      "conditional": true,
+      "points": [
+        [
+          2230,
+          480
+        ],
+        [
+          2230,
+          500
+        ],
+        [
+          2320,
+          500
+        ],
+        [
+          2320,
+          1230
+        ],
+        [
+          2280,
+          1230
+        ]
+      ]
+    },
+    {
+      "source": "policy",
+      "target": "host",
+      "condition": "selected policy delivery",
+      "conditional": true,
+      "points": [
+        [
+          720,
+          1200
+        ],
+        [
+          770,
+          1200
+        ],
+        [
+          770,
+          590
+        ],
+        [
+          1700,
+          590
+        ],
+        [
+          1700,
+          480
+        ]
+      ]
+    },
+    {
+      "source": "native-runtime",
+      "target": "policy",
+      "condition": "supported events",
+      "conditional": true,
+      "points": [
+        [
+          400,
+          1500
+        ],
+        [
+          400,
+          1340
+        ]
+      ]
+    },
+    {
+      "source": "history",
+      "target": "learn",
+      "condition": "consented scan",
+      "conditional": true,
+      "points": [
+        [
+          1200,
+          1500
+        ],
+        [
+          1200,
+          1340
+        ]
+      ]
+    },
+    {
+      "source": "learn",
+      "target": "history",
+      "condition": "reports / state",
+      "conditional": true,
+      "points": [
+        [
+          1390,
+          1340
+        ],
+        [
+          1390,
+          1500
+        ]
+      ]
+    },
+    {
+      "source": "proxy",
+      "target": "history",
+      "condition": "usage / cache observations",
+      "conditional": true,
+      "points": [
+        [
+          2440,
+          450
+        ],
+        [
+          2400,
+          450
+        ],
+        [
+          2400,
+          1450
+        ],
+        [
+          1500,
+          1450
+        ],
+        [
+          1500,
+          1500
+        ]
+      ]
+    }
+  ],
+  "main_map_edge_count": 31,
+  "main_map_box_crossings": 0,
+  "all_main_map_endpoints_exist": true,
+  "notes": [
+    "Local status is supplied-profile evidence, not fresh execution.",
+    "Renderer uses Windows Segoe UI fonts and bundled Pillow.",
+    "SVG and PNG share primitive layout and content, with font baseline differences."
+  ]
+}

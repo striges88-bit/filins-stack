@@ -1,0 +1,2787 @@
+[
+  {
+    "id": "response",
+    "name": "Response voice",
+    "layer": "instructions",
+    "input": "Task and technical payload",
+    "transform": "Remove filler while preserving meaning and exact technical text",
+    "output": "Short answer",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "skill selected",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/skills-hooks-and-plugins.md",
+    "source_line": 6,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "core",
+    "name": "Architecture-first Core",
+    "layer": "instructions",
+    "input": "Coding task and host event",
+    "transform": "Prefer existing behavior, responsible layer and smallest complete system",
+    "output": "Coding policy text",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "Core enabled and delivered",
+        "relationship": "adds policy"
+      },
+      {
+        "target": "hooks",
+        "condition": "supported event",
+        "relationship": "delivery mechanism"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/native/native-core.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-cavecrew",
+    "name": "cavecrew",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "When to delegate to `cavecrew-investigator` (locate code), `cavecrew-builder` (1-2 file edit) or `cavecrew-reviewer` (diff review) instead of working inline or using `Explore`. Their output is compressed, so main context lasts longer.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/cavecrew/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-commit",
+    "name": "caveman-commit",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Write a Conventional Commits message compressed to intent only. Use for \"write a commit\", \"commit message\", /commit or /caveman-commit.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-commit/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-compress",
+    "name": "caveman-compress",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Compress a memory file such as CLAUDE.md or a todo list into caveman format to save input tokens, keeping a readable backup. Trigger: /caveman-compress.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-compress/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-discover",
+    "name": "caveman-discover",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Find and label every LLM workflow in the repository so Caveman Cloud groups spend by workflow instead of one bucket. Use for \"discover workflows\" or breaking LLM spend down by workflow.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "cloud-control",
+        "condition": "explicit authenticated Cloud task and skill installation",
+        "relationship": "scoped control workflow"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-discover/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-evidence-review",
+    "name": "caveman-evidence-review",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Read-only review of Caveman Cloud evidence: cost, Cave Score, workflows, traces, latency, errors, routing, savings. Use when asked what Caveman found or where LLM spend goes.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "cloud-control",
+        "condition": "explicit authenticated Cloud task and skill installation",
+        "relationship": "scoped control workflow"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-evidence-review/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-explore",
+    "name": "caveman-explore",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Read-only repository explorer for cold-start orientation, broad cross-file localization, or when a direct search failed. Skip it when the exact file or symbol is already named. Returns path:line citations only; its reads stay out of main context.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-explore/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-help",
+    "name": "caveman-help",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Quick-reference card for the three caveman skills and their commands. Trigger: /caveman-help or \"caveman help\".",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-help/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-learn",
+    "name": "caveman-learn",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Act on a Caveman learn report - review the ranked token sinks, apply cost-lowering fixes with per-edit consent, and report what those fixes returned. Use when asked to lower an agent's token cost, what caveman has saved, to trim a heavy CLAUDE.md, or to offload re-pasted context into cavemem.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-learn/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-manage",
+    "name": "caveman-manage",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Inspect Caveman Cloud's experiment lifecycle and block unsafe execution. Use when asked to start, approve, cancel, promote or roll back a Caveman experiment.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "cloud-control",
+        "condition": "explicit authenticated Cloud task and skill installation",
+        "relationship": "scoped control workflow"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-manage/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-optimize",
+    "name": "caveman-optimize",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Turn a Caveman optimization observation into an operator-chosen candidate with a paired baseline evaluation. Use when asked to inspect or evaluate a Caveman optimization report. Needs explicit approval.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "cloud-control",
+        "condition": "explicit authenticated Cloud task and skill installation",
+        "relationship": "scoped control workflow"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-optimize/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-review",
+    "name": "caveman-review",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Compressed code review - one line per finding with location, problem and fix. Use for /caveman-review, \"review this PR\", or \"review the diff\".",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-review/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-setup",
+    "name": "caveman-setup",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Wire a repository through the Caveman Cloud gateway so every LLM request is measured, with no behavior change. Use for \"set up caveman\" or adding LLM spend observability.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "cloud-control",
+        "condition": "explicit authenticated Cloud task and skill installation",
+        "relationship": "scoped control workflow"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-setup/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman-stats",
+    "name": "caveman-stats",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Report recorded Claude Code output/cache-read usage; native host report elsewhere; savings remain unknown",
+    "output": "Observed usage with no estimated savings claim",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman-stats/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-caveman",
+    "name": "caveman",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Terse caveman voice: answer first, fluff gone, every technical fact kept. Use for /caveman, \"caveman mode\", \"talk like caveman\", \"be brief\", \"less tokens\". Stays on until \"stop caveman\" or \"normal mode\".",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/caveman/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-investigate-first",
+    "name": "investigate-first",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Diagnose ambiguous failures before editing. Use for unknown causes, intermittent behavior, performance regressions, or investigations needing evidence-ranked hypotheses.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/investigate-first/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-lean-build",
+    "name": "lean-build",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Build feature work with high overbuilding risk. Use for new behavior, product slices, or integrations where repository reuse, strict scope, and an explicit stop condition matter.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/lean-build/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-megacave",
+    "name": "megacave",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Caveman in Classical Chinese: 文言文 register, far fewer characters, technical terms verbatim. Invoke only with /megacave or /caveman wenyan. Stays on until \"stop caveman\" or \"normal mode\".",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/megacave/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-migration",
+    "name": "migration",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Implement reversible compatibility-safe transitions. Use for schema, data, API, protocol, configuration, or dependency migrations requiring rollback and preservation proof.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/migration/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-safe-refactor",
+    "name": "safe-refactor",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Restructure code while preserving behavior. Use for extraction, consolidation, ownership moves, or cleanup where verification must bracket structural edits.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/safe-refactor/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-surgical-patch",
+    "name": "surgical-patch",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Fix bugs and small behavior changes at the narrowest responsible layer. Use when regression proof, preserved surrounding behavior, and task-relevant tests matter.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/surgical-patch/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-ultracave",
+    "name": "ultracave",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Caveman at maximum compression: fragments, one word when one word is enough, each fact once. Invoke only with /ultracave or /caveman ultra. Stays on until \"stop caveman\" or \"normal mode\".",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/ultracave/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "skill-verify-and-stop",
+    "name": "verify-and-stop",
+    "layer": "specialist skill",
+    "input": "Explicit invocation or matching task",
+    "transform": "Prove existing work meets acceptance conditions without expanding scope. Use for validation-only tasks, completion checks, focused gate runs, and last-mile proof.",
+    "output": "Skill-specific instruction/output contract",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "selected skill and task permissions",
+        "relationship": "instructs model"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/skills/verify-and-stop/SKILL.md",
+    "source_line": 1,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "cavecrew-investigator",
+    "name": "Cavecrew investigator",
+    "layer": "delegation role",
+    "input": "Explicit bounded authorized task",
+    "transform": "Return compact role-specific evidence; builder accepts at most two files; reviewer is read-only",
+    "output": "Locations, narrow edit verification or findings",
+    "connections": [
+      {
+        "target": "skill-cavecrew",
+        "condition": "explicit task and launch policy",
+        "relationship": "role"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/exploration-and-delegation.md",
+    "source_line": 55,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "cavecrew-builder",
+    "name": "Cavecrew builder",
+    "layer": "delegation role",
+    "input": "Explicit bounded authorized task",
+    "transform": "Return compact role-specific evidence; builder accepts at most two files; reviewer is read-only",
+    "output": "Locations, narrow edit verification or findings",
+    "connections": [
+      {
+        "target": "skill-cavecrew",
+        "condition": "explicit task and launch policy",
+        "relationship": "role"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/exploration-and-delegation.md",
+    "source_line": 55,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "cavecrew-reviewer",
+    "name": "Cavecrew reviewer",
+    "layer": "delegation role",
+    "input": "Explicit bounded authorized task",
+    "transform": "Return compact role-specific evidence; builder accepts at most two files; reviewer is read-only",
+    "output": "Locations, narrow edit verification or findings",
+    "connections": [
+      {
+        "target": "skill-cavecrew",
+        "condition": "explicit task and launch policy",
+        "relationship": "role"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/exploration-and-delegation.md",
+    "source_line": 55,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "delegate",
+    "name": "Optional caveman-delegate MCP",
+    "layer": "delegation tool",
+    "input": "Explicit delegated task",
+    "transform": "Invoke separately authorized host/server delegation",
+    "output": "Separate worker result and usage",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "execute.delegate opt-in plus host permission",
+        "relationship": "delegation"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/exploration-and-delegation.md",
+    "source_line": 78,
+    "visual_group": "Policy, skills and delegation",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "host",
+    "name": "Existing agent or application",
+    "layer": "host",
+    "input": "User task, conversation, tools",
+    "transform": "Own agent loop, approvals and provider client",
+    "output": "Requests and actions",
+    "connections": [
+      {
+        "target": "wrap",
+        "condition": "explicit wrapped launch",
+        "relationship": "child transport"
+      },
+      {
+        "target": "proxy",
+        "condition": "configured base URL",
+        "relationship": "provider request"
+      },
+      {
+        "target": "engine-mcp",
+        "condition": "registered and called",
+        "relationship": "tools"
+      },
+      {
+        "target": "browser",
+        "condition": "registered and called",
+        "relationship": "browser tools"
+      },
+      {
+        "target": "middleware",
+        "condition": "application integration",
+        "relationship": "outbound projection"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/product-model.md",
+    "source_line": 51,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "cli",
+    "name": "caveman CLI",
+    "layer": "control",
+    "input": "Commands, flags and resolved settings",
+    "transform": "Install, configure, launch and inspect companion runtimes",
+    "output": "Process launches and reports",
+    "connections": [
+      {
+        "target": "wrap",
+        "condition": "wrapped command",
+        "relationship": "launch"
+      },
+      {
+        "target": "proxy",
+        "condition": "start selected",
+        "relationship": "launch"
+      },
+      {
+        "target": "engine",
+        "condition": "local command",
+        "relationship": "invoke"
+      },
+      {
+        "target": "learn",
+        "condition": "scan authorized",
+        "relationship": "analysis"
+      },
+      {
+        "target": "cloud",
+        "condition": "connected command and auth",
+        "relationship": "HTTP"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/architecture.md",
+    "source_line": 28,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "wrap",
+    "name": "Agent wrapping and profiles",
+    "layer": "routing",
+    "input": "Installed agent and explicit session settings",
+    "transform": "Set child endpoint without replacing agent loop; require compatible routes and recovery",
+    "output": "Existing agent process with selected transport",
+    "connections": [
+      {
+        "target": "proxy",
+        "condition": "route and live identity verified",
+        "relationship": "provider transport"
+      },
+      {
+        "target": "host",
+        "condition": "unsupported route or missing proxy",
+        "relationship": "direct fallback"
+      },
+      {
+        "target": "engine-mcp",
+        "condition": "recovery path needed",
+        "relationship": "registration gate"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/product-model.md",
+    "source_line": 51,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "profiles",
+    "name": "Declarative agent profiles",
+    "layer": "routing",
+    "input": "Host identity and capabilities",
+    "transform": "Describe supported launch and adapter behavior",
+    "output": "Host-specific integration",
+    "connections": [
+      {
+        "target": "wrap",
+        "condition": "matching supported host",
+        "relationship": "configure launch"
+      },
+      {
+        "target": "hooks",
+        "condition": "host supports event",
+        "relationship": "register"
+      },
+      {
+        "target": "native-plugins",
+        "condition": "host requires plugin",
+        "relationship": "register"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/product-model.md",
+    "source_line": 53,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "hooks",
+    "name": "Lifecycle hooks and native event adapter",
+    "layer": "host integration",
+    "input": "Session, prompt, tool, compact and child events",
+    "transform": "Deliver Core/reminders, correlate tasks and maintain recoverable working memory",
+    "output": "Context hints, event records and receipts",
+    "connections": [
+      {
+        "target": "core",
+        "condition": "enabled host event",
+        "relationship": "delivery"
+      },
+      {
+        "target": "native-runtime",
+        "condition": "supported valid event",
+        "relationship": "IPC"
+      },
+      {
+        "target": "ccr",
+        "condition": "eligible output captured",
+        "relationship": "typed original"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/architecture.md",
+    "source_line": 91,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "native-runtime",
+    "name": "Native task and working-memory runtime",
+    "layer": "runtime",
+    "input": "Normalized lifecycle events over user-only socket or pipe",
+    "transform": "Record contract/decisions; move eligible output into typed CCR; validate correlation",
+    "output": "Task records and evidence references",
+    "connections": [
+      {
+        "target": "ccr",
+        "condition": "eligible output and successful store",
+        "relationship": "typed objects"
+      },
+      {
+        "target": "usage-store",
+        "condition": "correlated request",
+        "relationship": "local accounting"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/architecture.md",
+    "source_line": 91,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "native-plugins",
+    "name": "Hermes, OpenClaw and OpenCode plugins",
+    "layer": "host integration",
+    "input": "Native host session and prompt events",
+    "transform": "Adapt hosts without equivalent hooks",
+    "output": "Host-native integration",
+    "connections": [
+      {
+        "target": "core",
+        "condition": "supported host",
+        "relationship": "instruction delivery"
+      },
+      {
+        "target": "native-runtime",
+        "condition": "supported event",
+        "relationship": "normalization"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/skills-hooks-and-plugins.md",
+    "source_line": 67,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "proxy",
+    "name": "caveman-proxy",
+    "layer": "runtime",
+    "input": "Provider-compatible HTTP requests",
+    "transform": "Resolve route/credentials, apply allowed transforms, preserve response streaming and record usage",
+    "output": "Provider-compatible response",
+    "connections": [
+      {
+        "target": "provider-routing",
+        "condition": "allowed route",
+        "relationship": "route selection"
+      },
+      {
+        "target": "engine",
+        "condition": "eligible compress mode",
+        "relationship": "transform"
+      },
+      {
+        "target": "pixel",
+        "condition": "pixel mode and allowlist",
+        "relationship": "image transport"
+      },
+      {
+        "target": "usage-store",
+        "condition": "reported request outcome",
+        "relationship": "accounting"
+      },
+      {
+        "target": "cache",
+        "condition": "supported mode/provider",
+        "relationship": "cache planning"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/proxy-and-providers.md",
+    "source_line": 18,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "provider-routing",
+    "name": "Provider adapters and credential mapping",
+    "layer": "routing",
+    "input": "Path, endpoint configuration and provider credential",
+    "transform": "Match allowed route, preserve or resolve provider credential; retain protocol and error semantics",
+    "output": "Upstream request",
+    "connections": [
+      {
+        "target": "providers",
+        "condition": "endpoint/security gates pass",
+        "relationship": "forward"
+      },
+      {
+        "target": "security",
+        "condition": "every outbound request",
+        "relationship": "validation"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/proxy-and-providers.md",
+    "source_line": 34,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "providers",
+    "name": "Selected model provider",
+    "layer": "external",
+    "input": "Authorized provider request",
+    "transform": "Model inference and provider billing",
+    "output": "Response, stream and usage counters",
+    "connections": [
+      {
+        "target": "proxy",
+        "condition": "proxy path selected",
+        "relationship": "return response"
+      },
+      {
+        "target": "host",
+        "condition": "direct integration",
+        "relationship": "return response"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/proxy-and-providers.md",
+    "source_line": 55,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "security",
+    "name": "Provider network and local trust guards",
+    "layer": "security",
+    "input": "Listener, endpoint, redirect, credential and local file state",
+    "transform": "Loopback default; optional shared auth; SSRF/TLS validation; restrict state writes",
+    "output": "Permitted transport or refusal",
+    "connections": [
+      {
+        "target": "proxy",
+        "condition": "valid listener/endpoint",
+        "relationship": "routing"
+      },
+      {
+        "target": "ccr",
+        "condition": "protected file state",
+        "relationship": "storage"
+      },
+      {
+        "target": "hooks",
+        "condition": "symlink-safe writes",
+        "relationship": "state"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/security-and-privacy.md",
+    "source_line": 7,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "configuration",
+    "name": "Feature config and proxy YAML control",
+    "layer": "control",
+    "input": "Defaults, global feature JSON, allowed project overlay, env and flags",
+    "transform": "Resolve distinct wrap and proxy settings; fail-safe unknown mode",
+    "output": "Effective process settings",
+    "connections": [
+      {
+        "target": "wrap",
+        "condition": "feature resolution",
+        "relationship": "mode/integrations"
+      },
+      {
+        "target": "proxy",
+        "condition": "YAML/env resolution",
+        "relationship": "mode/endpoints"
+      },
+      {
+        "target": "pixel",
+        "condition": "allowlist plus mode",
+        "relationship": "gate"
+      },
+      {
+        "target": "core",
+        "condition": "hook config",
+        "relationship": "delivery"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/configuration.md",
+    "source_line": 3,
+    "visual_group": "Host, CLI and routing",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "engine",
+    "name": "Caveman Engine",
+    "layer": "runtime",
+    "input": "Input bytes, mode, policy and optional forced type/query",
+    "transform": "Detect, route, transform, validate, count and commit recovery",
+    "output": "Original bytes or recoverable smaller result",
+    "connections": [
+      {
+        "target": "detector",
+        "condition": "compress selected",
+        "relationship": "classify"
+      },
+      {
+        "target": "compressors",
+        "condition": "known eligible type",
+        "relationship": "transform"
+      },
+      {
+        "target": "ccr",
+        "condition": "lossy transform and store available",
+        "relationship": "commit exact original"
+      },
+      {
+        "target": "token-counter",
+        "condition": "estimate requested",
+        "relationship": "count"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 28,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "detector",
+    "name": "Automatic shape detector",
+    "layer": "engine stage",
+    "input": "Candidate bytes",
+    "transform": "Recognize JSON, terminal, diff, HTML, tables, code, logs, search, config or text",
+    "output": "Content type",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "automatic match",
+        "relationship": "select transform"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 49,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressors",
+    "name": "Compressor registry",
+    "layer": "engine stage",
+    "input": "Parsed candidate and optional relevance query",
+    "transform": "15 registered content-specific transforms; S4 safety class; parser and size gates",
+    "output": "Smaller candidate or refusal",
+    "connections": [
+      {
+        "target": "engine",
+        "condition": "candidate complete",
+        "relationship": "return"
+      },
+      {
+        "target": "toon",
+        "condition": "explicit-only selection",
+        "relationship": "structured transform"
+      },
+      {
+        "target": "browser",
+        "condition": "forced a11y",
+        "relationship": "tree transform"
+      },
+      {
+        "target": "catalog-shrink",
+        "condition": "tool schema forced",
+        "relationship": "catalog transform"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "toon",
+    "name": "TOON encode/decode",
+    "layer": "encoding",
+    "input": "Uniform structured context",
+    "transform": "Explicit gated compact tabular text encoding; reject invalid decode and nonwinning encoding",
+    "output": "Compact text or structure",
+    "connections": [
+      {
+        "target": "engine",
+        "condition": "explicit selection and smaller",
+        "relationship": "context result"
+      },
+      {
+        "target": "ccr",
+        "condition": "lossy emitted context",
+        "relationship": "original"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/toon-and-pixel.md",
+    "source_line": 24,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "mode-record",
+    "name": "Record mode",
+    "layer": "mode",
+    "input": "Candidate request or bytes",
+    "transform": "Preserve model-visible input; Engine record stores no recovery",
+    "output": "Original bytes",
+    "connections": [
+      {
+        "target": "proxy",
+        "condition": "record selected or unknown mode fallback",
+        "relationship": "byte-preserving request path"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/engine/result.go",
+    "source_line": 9,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "mode-compress",
+    "name": "Compress mode",
+    "layer": "mode",
+    "input": "Eligible candidate",
+    "transform": "Run routed compressor only after safety, parse, size and recovery gates",
+    "output": "Recoverable compact result or original",
+    "connections": [
+      {
+        "target": "engine",
+        "condition": "mode explicitly compress",
+        "relationship": "transform policy"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/engine/engine.go",
+    "source_line": 67,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "wasm",
+    "name": "Engine WebAssembly runtime",
+    "layer": "runtime package",
+    "input": "Browser-compatible caller bytes",
+    "transform": "Run Engine using ephemeral in-memory recovery",
+    "output": "Compact output and runtime-bound handle",
+    "connections": [
+      {
+        "target": "engine",
+        "condition": "WASM embedding",
+        "relationship": "runtime variant"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 125,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-json",
+    "name": "JSON compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-log",
+    "name": "log compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-code",
+    "name": "code compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-diff",
+    "name": "diff compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-search-result",
+    "name": "search-result compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-text",
+    "name": "text compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-html",
+    "name": "HTML compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-tabular",
+    "name": "tabular compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-configuration",
+    "name": "configuration compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-tool-schema",
+    "name": "tool-schema compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-tool-schema-annotations",
+    "name": "tool-schema-annotations compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-toon",
+    "name": "TOON compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-accessibility-tree",
+    "name": "accessibility-tree compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-repetition",
+    "name": "repetition compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "compressor-terminal-output",
+    "name": "terminal-output compressor",
+    "layer": "engine transform",
+    "input": "Matching content bytes",
+    "transform": "Apply content-specific S4 transform; explicit-only classes bypass general Detect",
+    "output": "Compact candidate or refusal",
+    "connections": [
+      {
+        "target": "compressors",
+        "condition": "registered and policy permits",
+        "relationship": "registry member"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 69,
+    "visual_group": "Engine and transformations",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "ccr",
+    "name": "CCR exact-original store",
+    "layer": "storage",
+    "input": "Exact bytes or typed working-memory objects",
+    "transform": "Content-address originals; store metadata; bounded capacity; reject storage failure",
+    "output": "ccr_ handle or ccr_obj_ object reference",
+    "connections": [
+      {
+        "target": "retrieve",
+        "condition": "same valid local store",
+        "relationship": "exact bytes"
+      },
+      {
+        "target": "engine",
+        "condition": "store success",
+        "relationship": "permit replacement"
+      },
+      {
+        "target": "browser",
+        "condition": "snapshot saved",
+        "relationship": "recover source"
+      },
+      {
+        "target": "memory",
+        "condition": "recall saved",
+        "relationship": "recover detail"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/context-recovery.md",
+    "source_line": 7,
+    "visual_group": "Tools, Browse and exact recovery",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "retrieve",
+    "name": "CCR recovery operations",
+    "layer": "recovery",
+    "input": "Complete handle and optional validated object pointer/query",
+    "transform": "Read exact original or explicitly selected excerpt; invalid selectors fail",
+    "output": "Original bytes or explicit retrieval error",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "authorized tool request",
+        "relationship": "source"
+      },
+      {
+        "target": "engine-mcp",
+        "condition": "registered tool called",
+        "relationship": "recovery"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/context-recovery.md",
+    "source_line": 19,
+    "visual_group": "Tools, Browse and exact recovery",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "engine-mcp",
+    "name": "caveman-mcp",
+    "layer": "tools",
+    "input": "MCP over stdio calls",
+    "transform": "Expose Compress, Retrieve, Stats, TOON encode and decode",
+    "output": "Tool result",
+    "connections": [
+      {
+        "target": "engine",
+        "condition": "compress call",
+        "relationship": "transform"
+      },
+      {
+        "target": "retrieve",
+        "condition": "retrieve call",
+        "relationship": "source"
+      },
+      {
+        "target": "toon",
+        "condition": "encode/decode call",
+        "relationship": "codec"
+      },
+      {
+        "target": "stats",
+        "condition": "stats call",
+        "relationship": "accounting"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/local-tools.md",
+    "source_line": 6,
+    "visual_group": "Tools, Browse and exact recovery",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "output-shrink",
+    "name": "CLI command-output shrink wrapper",
+    "layer": "tools",
+    "input": "Finite command stdout/stderr or saved text log",
+    "transform": "Capture bounded output, force suitable transform, preserve command exit and recovery",
+    "output": "Short overview plus original handle",
+    "connections": [
+      {
+        "target": "engine",
+        "condition": "eligible finite input",
+        "relationship": "terminal transform"
+      },
+      {
+        "target": "ccr",
+        "condition": "before lossy output",
+        "relationship": "original"
+      },
+      {
+        "target": "retrieve",
+        "condition": "exact evidence needed",
+        "relationship": "recover full output"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/local-tools.md",
+    "source_line": 83,
+    "visual_group": "Tools, Browse and exact recovery",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "catalog-shrink",
+    "name": "Native caveman-shrink tool-catalog binary",
+    "layer": "tools",
+    "input": "MCP/OpenAI tool catalog JSON",
+    "transform": "Keep names/params/enums/required/default/const/ref targets; reduce annotations/descriptions",
+    "output": "Smaller catalog and recovery report",
+    "connections": [
+      {
+        "target": "ccr",
+        "condition": "successful lossy transform",
+        "relationship": "exact catalog"
+      },
+      {
+        "target": "retrieve",
+        "condition": "recover subcommand",
+        "relationship": "source"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/shrink/README.md",
+    "source_line": 3,
+    "visual_group": "Tools, Browse and exact recovery",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "legacy-catalog-proxy",
+    "name": "Legacy JS caveman-shrink MCP stdio proxy",
+    "layer": "legacy tools",
+    "input": "Upstream MCP server messages",
+    "transform": "Intercept tools/list, prompts/list and resources/list description fields; leave tool-call replies unchanged",
+    "output": "Reduced catalog prose",
+    "connections": [
+      {
+        "target": "host",
+        "condition": "explicit configured wrapper",
+        "relationship": "MCP responses"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/src/mcp-servers/caveman-shrink/README.md",
+    "source_line": 3,
+    "visual_group": "Tools, Browse and exact recovery",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "browser",
+    "name": "caveman-browse CDP bridge",
+    "layer": "browser",
+    "input": "URL/query or action/evaluation request",
+    "transform": "Attach isolated Chrome, capture Accessibility full AX tree, force a11y and keep actionable references",
+    "output": "Compact snapshot, action outcome or recovered AX tree",
+    "connections": [
+      {
+        "target": "chrome",
+        "condition": "CDP attach or launch",
+        "relationship": "browser state"
+      },
+      {
+        "target": "engine",
+        "condition": "forced a11y",
+        "relationship": "compress tree"
+      },
+      {
+        "target": "ccr",
+        "condition": "snapshot original",
+        "relationship": "recovery"
+      },
+      {
+        "target": "browser-adapters",
+        "condition": "host registration",
+        "relationship": "MCP transport"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/browse/README.md",
+    "source_line": 3,
+    "visual_group": "Tools, Browse and exact recovery",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "chrome",
+    "name": "Isolated Chrome browser",
+    "layer": "browser",
+    "input": "Navigation, CDP actions and JS",
+    "transform": "Own DOM, accessibility and site session state",
+    "output": "AX tree and operation result",
+    "connections": [
+      {
+        "target": "browser",
+        "condition": "CDP response",
+        "relationship": "snapshot/actions"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/browse/README.md",
+    "source_line": 45,
+    "visual_group": "Tools, Browse and exact recovery",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "browser-adapters",
+    "name": "Browser CLI and MCP host adapters",
+    "layer": "integration",
+    "input": "Host browser tool call or CLI command",
+    "transform": "Translate calls into standalone bridge tools/subcommands",
+    "output": "Snapshot/act/eval/recover transport",
+    "connections": [
+      {
+        "target": "browser",
+        "condition": "registered or explicit CLI",
+        "relationship": "invoke"
+      },
+      {
+        "target": "host",
+        "condition": "MCP tool completion",
+        "relationship": "result"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/cli/src/index.ts",
+    "source_line": 1337,
+    "visual_group": "Tools, Browse and exact recovery",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "extension",
+    "name": "MV3 web response-style extension",
+    "layer": "browser instructions",
+    "input": "Draft outgoing ChatGPT, Claude or Gemini message",
+    "transform": "Insert visible Caveman directive before user sends; local storage settings",
+    "output": "Draft message with style instruction",
+    "connections": [
+      {
+        "target": "response",
+        "condition": "site enabled and extension loaded",
+        "relationship": "instruction"
+      },
+      {
+        "target": "providers",
+        "condition": "user sends through website",
+        "relationship": "web prompt"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/skills-hooks-and-plugins.md",
+    "source_line": 79,
+    "visual_group": "Tools, Browse and exact recovery",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "sdk",
+    "name": "TypeScript and Python agent SDK",
+    "layer": "application integration",
+    "input": "Application configuration, context parts, tools and policy",
+    "transform": "Provider calls, context assembly/packs, deferred tools, compression and tracing",
+    "output": "Provider requests and reports",
+    "connections": [
+      {
+        "target": "middleware-runtime",
+        "condition": "middleware submodule configured",
+        "relationship": "optimization"
+      },
+      {
+        "target": "proxy",
+        "condition": "base URL chosen",
+        "relationship": "provider routing"
+      },
+      {
+        "target": "providers",
+        "condition": "direct provider mode",
+        "relationship": "inference"
+      },
+      {
+        "target": "contracts",
+        "condition": "wire API",
+        "relationship": "schema"
+      },
+      {
+        "target": "tracing",
+        "condition": "configured",
+        "relationship": "observations"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/sdks-and-packages.md",
+    "source_line": 7,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "middleware",
+    "name": "TypeScript and Python framework middleware",
+    "layer": "application integration",
+    "input": "Framework-owned conversation and eligible tool results",
+    "transform": "Project copied outbound request; retain original history/inference loop; compress only with owned recovery executor",
+    "output": "Outbound projection or original request with reason",
+    "connections": [
+      {
+        "target": "middleware-runtime",
+        "condition": "valid endpoint and scope",
+        "relationship": "optimize"
+      },
+      {
+        "target": "host",
+        "condition": "normal fallback",
+        "relationship": "unchanged inference"
+      },
+      {
+        "target": "framework-adapters",
+        "condition": "supported version",
+        "relationship": "bind"
+      },
+      {
+        "target": "retrieve",
+        "condition": "model tool owned by adapter",
+        "relationship": "recover"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/typescript/README.md",
+    "source_line": 3,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "middleware-runtime",
+    "name": "Scoped middleware service",
+    "layer": "runtime",
+    "input": "Authenticated optimize/retrieve/receipt/delete calls",
+    "transform": "Scope originals by principal/namespace/session/branch/cache epoch; validate plans; enforce retention/budgets",
+    "output": "Plan, original page, receipt or error",
+    "connections": [
+      {
+        "target": "middleware-store",
+        "condition": "authorized scope",
+        "relationship": "persist"
+      },
+      {
+        "target": "engine",
+        "condition": "eligible segment",
+        "relationship": "compress"
+      },
+      {
+        "target": "middleware-security",
+        "condition": "all routes",
+        "relationship": "auth/scope"
+      },
+      {
+        "target": "contracts",
+        "condition": "protocol version",
+        "relationship": "validate"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/middleware-protocol.md",
+    "source_line": 27,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "middleware-store",
+    "name": "Middleware scoped originals and plans",
+    "layer": "storage",
+    "input": "Authorized scope and exact original",
+    "transform": "Persist choices/originals with lifecycle; SQLite or shared Postgres; optional encryption",
+    "output": "Stable replacements and cmw_ handles",
+    "connections": [
+      {
+        "target": "middleware-runtime",
+        "condition": "authorized scope and retention",
+        "relationship": "read/write"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/security-and-privacy.md",
+    "source_line": 25,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "middleware-security",
+    "name": "Middleware identity and transport gates",
+    "layer": "security",
+    "input": "Runtime credential, origin and normalized scope",
+    "transform": "Reject browser cross-origin; resolve principal; enforce namespaces; own recovery and TLS policy",
+    "output": "Authorized request or explicit failure",
+    "connections": [
+      {
+        "target": "middleware-runtime",
+        "condition": "all gates pass",
+        "relationship": "execute"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/middleware-protocol.md",
+    "source_line": 70,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "framework-adapters",
+    "name": "Framework adapter families",
+    "layer": "application integration",
+    "input": "Supported framework request",
+    "transform": "Bind native tools and recovery ownership; version-gate unsupported entrypoints",
+    "output": "Conditional outbound projection",
+    "connections": [
+      {
+        "target": "middleware",
+        "condition": "supported version, shape and recovery executor",
+        "relationship": "invoke"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/typescript/README.md",
+    "source_line": 30,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-ts-ai-sdk",
+    "name": "TypeScript ai-sdk adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/typescript/README.md",
+    "source_line": 34,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-ts-openai",
+    "name": "TypeScript openai adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/typescript/README.md",
+    "source_line": 34,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-ts-anthropic",
+    "name": "TypeScript anthropic adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/typescript/README.md",
+    "source_line": 34,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-ts-langchain",
+    "name": "TypeScript langchain adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/typescript/README.md",
+    "source_line": 34,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-ts-google",
+    "name": "TypeScript google adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/typescript/README.md",
+    "source_line": 34,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-ts-strands",
+    "name": "TypeScript strands adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/typescript/README.md",
+    "source_line": 34,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-ts-mastra",
+    "name": "TypeScript mastra adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/typescript/README.md",
+    "source_line": 34,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-ts-mcp",
+    "name": "TypeScript mcp adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/typescript/README.md",
+    "source_line": 34,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-langchain",
+    "name": "Python langchain adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-openai",
+    "name": "Python openai adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-anthropic",
+    "name": "Python anthropic adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-litellm",
+    "name": "Python litellm adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-google",
+    "name": "Python google adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-strands",
+    "name": "Python strands adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-agno",
+    "name": "Python agno adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-crewai",
+    "name": "Python crewai adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-pydantic-ai",
+    "name": "Python pydantic-ai adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-autogen",
+    "name": "Python autogen adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-llama-index",
+    "name": "Python llama-index adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-mcp",
+    "name": "Python mcp adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "adapter-py-asgi",
+    "name": "Python asgi adapter",
+    "layer": "framework adapter",
+    "input": "Framework-owned outbound call",
+    "transform": "Use certified or experimental entrypoint; only recovery-owned entrypoints compress",
+    "output": "Copied projection or recovery_unbound pass-through",
+    "connections": [
+      {
+        "target": "framework-adapters",
+        "condition": "supported version and registered recovery",
+        "relationship": "family"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 36,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "pi-extension",
+    "name": "@caveman-ai/pi extension",
+    "layer": "host adapter package",
+    "input": "Pi host request and provider policy",
+    "transform": "Preserve host compatibility and verify full endpoint identity before routing",
+    "output": "Supported proxy route or direct notice",
+    "connections": [
+      {
+        "target": "wrap",
+        "condition": "verified identity and compatible policy",
+        "relationship": "host adapter"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/proxy-and-providers.md",
+    "source_line": 152,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "sdk-ts-package",
+    "name": "@caveman-ai/sdk",
+    "layer": "runtime package",
+    "input": "TypeScript application imports",
+    "transform": "Expose SDK and middleware submodule",
+    "output": "SDK client",
+    "connections": [
+      {
+        "target": "sdk",
+        "condition": "application imports and configures",
+        "relationship": "TypeScript distribution"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/sdk/typescript/package.json",
+    "source_line": 2,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "sdk-py-package",
+    "name": "caveman-sdk / caveman_cloud",
+    "layer": "runtime package",
+    "input": "Python application imports",
+    "transform": "Expose matching SDK and middleware submodule; historical name does not imply Cloud",
+    "output": "SDK client",
+    "connections": [
+      {
+        "target": "sdk",
+        "condition": "application imports and configures",
+        "relationship": "Python distribution"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/security-and-privacy.md",
+    "source_line": 68,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "middleware-ts-package",
+    "name": "@caveman-ai/middleware",
+    "layer": "runtime package",
+    "input": "TypeScript framework imports",
+    "transform": "Expose native framework adapters",
+    "output": "Configured adapters",
+    "connections": [
+      {
+        "target": "middleware",
+        "condition": "application integration",
+        "relationship": "TypeScript distribution"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/typescript/package.json",
+    "source_line": 2,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "middleware-py-package",
+    "name": "caveman-middleware",
+    "layer": "runtime package",
+    "input": "Python framework imports",
+    "transform": "Expose native framework adapters",
+    "output": "Configured adapters",
+    "connections": [
+      {
+        "target": "middleware",
+        "condition": "application integration",
+        "relationship": "Python distribution"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/middleware/python/README.md",
+    "source_line": 1,
+    "visual_group": "SDK and framework adapters",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "token-counter",
+    "name": "Offline token counter",
+    "layer": "accounting",
+    "input": "Original/final representation",
+    "transform": "o200k_base where available; character fallback",
+    "output": "Inferred counts",
+    "connections": [
+      {
+        "target": "engine",
+        "condition": "compression accounting",
+        "relationship": "counts"
+      },
+      {
+        "target": "stats",
+        "condition": "local observations",
+        "relationship": "estimates"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/engine.md",
+    "source_line": 111,
+    "visual_group": "Accounting, Learn and contracts",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "usage-store",
+    "name": "Local usage and replacement-cache SQLite",
+    "layer": "storage",
+    "input": "Provider usage, local comparisons and deterministic replacement mappings",
+    "transform": "Persist local rows, pricing provenance, trials and learned findings",
+    "output": "caveman.db",
+    "connections": [
+      {
+        "target": "stats",
+        "condition": "report selected",
+        "relationship": "aggregate"
+      },
+      {
+        "target": "learn",
+        "condition": "scan authorized",
+        "relationship": "observations"
+      },
+      {
+        "target": "cache",
+        "condition": "stable replacement mapping",
+        "relationship": "reuse"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/architecture.md",
+    "source_line": 46,
+    "visual_group": "Accounting, Learn and contracts",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "cache",
+    "name": "Prompt-cache planner and replacement stability",
+    "layer": "optimization",
+    "input": "Stable prefix, provider capability and pricing semantics",
+    "transform": "Add supported provider-native cache hints; reuse exact replacement bytes; never cache model responses",
+    "output": "Stable transformed prefix and cache controls",
+    "connections": [
+      {
+        "target": "proxy",
+        "condition": "supported non-record request",
+        "relationship": "apply"
+      },
+      {
+        "target": "usage-store",
+        "condition": "mapping read/write succeeds",
+        "relationship": "stable replacement"
+      },
+      {
+        "target": "providers",
+        "condition": "request forwarded",
+        "relationship": "provider cache decision"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/cache-planner.md",
+    "source_line": 3,
+    "visual_group": "Accounting, Learn and contracts",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "stats",
+    "name": "CLI stats and accounting dashboard",
+    "layer": "accounting",
+    "input": "Local proxy request ledger",
+    "transform": "Aggregate provider-reported usage separately from inferred deltas and list-price estimates",
+    "output": "Terminal/JSON/offline HTML",
+    "connections": [
+      {
+        "target": "usage-store",
+        "condition": "local recorded rows",
+        "relationship": "read"
+      },
+      {
+        "target": "provider-catalog",
+        "condition": "known dated model price",
+        "relationship": "estimate"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/stats-accounting.md",
+    "source_line": 3,
+    "visual_group": "Accounting, Learn and contracts",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "learn",
+    "name": "Local Learn scanner and report",
+    "layer": "analysis",
+    "input": "Supported setup and local agent history, proxy rows",
+    "transform": "Rank token sinks; write local reports/snapshots; consent required for fixes",
+    "output": "Findings, estimates and candidates",
+    "connections": [
+      {
+        "target": "usage-store",
+        "condition": "scan authorized",
+        "relationship": "read/write"
+      },
+      {
+        "target": "learn-autopilot",
+        "condition": "enabled end event",
+        "relationship": "throttled scan"
+      },
+      {
+        "target": "memory",
+        "condition": "scan lacks no-remember",
+        "relationship": "remember reducible sinks"
+      },
+      {
+        "target": "skill-caveman-learn",
+        "condition": "operator approves individual edit",
+        "relationship": "apply"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/learn.md",
+    "source_line": 3,
+    "visual_group": "Accounting, Learn and contracts",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "learn-autopilot",
+    "name": "Learn autopilot event loop",
+    "layer": "analysis",
+    "input": "SessionEnd and later SessionStart",
+    "transform": "Throttle local scans and queue findings; use no-remember",
+    "output": "Report/state and later nudge",
+    "connections": [
+      {
+        "target": "learn",
+        "condition": "enabled and throttle elapsed",
+        "relationship": "scan"
+      },
+      {
+        "target": "hooks",
+        "condition": "later event",
+        "relationship": "nudge"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/learn.md",
+    "source_line": 85,
+    "visual_group": "Accounting, Learn and contracts",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "contracts",
+    "name": "Shared JSON Schema contracts",
+    "layer": "contract",
+    "input": "SDK/runtime/event/eval artifacts",
+    "transform": "Validate schemas and aligned language contracts",
+    "output": "Conforming wire artifacts",
+    "connections": [
+      {
+        "target": "sdk",
+        "condition": "public contract",
+        "relationship": "validate"
+      },
+      {
+        "target": "middleware",
+        "condition": "plan and response contract",
+        "relationship": "validate"
+      },
+      {
+        "target": "cloud",
+        "condition": "controlled evidence API",
+        "relationship": "schema"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/sdks-and-packages.md",
+    "source_line": 43,
+    "visual_group": "Accounting, Learn and contracts",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "provider-catalog",
+    "name": "Dated provider price catalog",
+    "layer": "accounting",
+    "input": "Known provider/model identity",
+    "transform": "Return public list prices; unknown remains zero/unpriced",
+    "output": "Catalog estimate and provenance",
+    "connections": [
+      {
+        "target": "stats",
+        "condition": "priced usage row",
+        "relationship": "estimate"
+      },
+      {
+        "target": "sdk",
+        "condition": "known model",
+        "relationship": "cost metadata"
+      },
+      {
+        "target": "cache",
+        "condition": "supported economics",
+        "relationship": "plan"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/sdks-and-packages.md",
+    "source_line": 61,
+    "visual_group": "Accounting, Learn and contracts",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "tracing",
+    "name": "SDK traces and OpenTelemetry",
+    "layer": "observability",
+    "input": "Configured application operation metadata",
+    "transform": "Emit traces and runtime policy observations",
+    "output": "Trace records",
+    "connections": [
+      {
+        "target": "sdk",
+        "condition": "explicit configured tracing",
+        "relationship": "observability"
+      },
+      {
+        "target": "cloud",
+        "condition": "authenticated optional sync",
+        "relationship": "metadata"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/sdks-and-packages.md",
+    "source_line": 14,
+    "visual_group": "Accounting, Learn and contracts",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "benchmarks",
+    "name": "Eval and subagent-tax tooling",
+    "layer": "verification",
+    "input": "Pinned local fixtures and counters",
+    "transform": "Measure exact fixture and delegation overhead without provider requests",
+    "output": "Labeled benchmark evidence",
+    "connections": [
+      {
+        "target": "token-counter",
+        "condition": "offline measurement",
+        "relationship": "count"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/sdks-and-packages.md",
+    "source_line": 70,
+    "visual_group": "Accounting, Learn and contracts",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "mode-evaluation",
+    "name": "Recommend, shadow, canary and active modes",
+    "layer": "mode",
+    "input": "Eligible optimizer request",
+    "transform": "Produce recommendations, evaluate, select experimental traffic or apply enabled optimizers",
+    "output": "Evaluation or controlled optimization result",
+    "connections": [
+      {
+        "target": "proxy",
+        "condition": "explicit controlled configuration",
+        "relationship": "internal optimizer policy"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/proxy-and-providers.md",
+    "source_line": 205,
+    "visual_group": "Accounting, Learn and contracts",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "pixel",
+    "name": "Pixel text-to-image transport",
+    "layer": "encoding",
+    "input": "Dense eligible text",
+    "transform": "Render PNG only in explicit pixel mode and model allowlist; store original first",
+    "output": "Vision context plus recovery",
+    "connections": [
+      {
+        "target": "ccr",
+        "condition": "before image emitted",
+        "relationship": "exact original"
+      },
+      {
+        "target": "providers",
+        "condition": "allowlisted compatible model",
+        "relationship": "image request"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/toon-and-pixel.md",
+    "source_line": 52,
+    "visual_group": "Optional network and memory",
+    "local_evidence": "Excluded locally"
+  },
+  {
+    "id": "memory",
+    "name": "Cavemem",
+    "layer": "optional storage",
+    "input": "remember/recall/supersede/history/forget",
+    "transform": "Store raw facts, BM25 recall under budget, exclude superseded facts and compress recall",
+    "output": "Current ranked facts plus recovery handles",
+    "connections": [
+      {
+        "target": "engine",
+        "condition": "recall hit eligible",
+        "relationship": "compress"
+      },
+      {
+        "target": "ccr",
+        "condition": "compressed hit",
+        "relationship": "exact memory source"
+      },
+      {
+        "target": "memory-clients",
+        "condition": "explicit client call",
+        "relationship": "binary I/O"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/mem/README.md",
+    "source_line": 3,
+    "visual_group": "Optional network and memory",
+    "local_evidence": "Excluded locally"
+  },
+  {
+    "id": "memory-clients",
+    "name": "Cavemem Go, JS and Python clients",
+    "layer": "optional package",
+    "input": "Explicit memory operations",
+    "transform": "Send bounded text via stdin to local binary",
+    "output": "Memory result",
+    "connections": [
+      {
+        "target": "memory",
+        "condition": "explicit invocation",
+        "relationship": "operation"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/mem/README.md",
+    "source_line": 33,
+    "visual_group": "Optional network and memory",
+    "local_evidence": "Excluded locally"
+  },
+  {
+    "id": "cloud",
+    "name": "Connected Caveman Cloud commands",
+    "layer": "optional hosted control",
+    "input": "Authenticated project-scoped commands",
+    "transform": "Access hosted plans, score, costs, audit and optimization proposals",
+    "output": "Scoped hosted reports",
+    "connections": [
+      {
+        "target": "device-auth",
+        "condition": "login to chosen instance",
+        "relationship": "credential"
+      },
+      {
+        "target": "cloud-control",
+        "condition": "authorized account/project",
+        "relationship": "HTTP"
+      },
+      {
+        "target": "managed-gateway",
+        "condition": "explicit managed mode",
+        "relationship": "content transport"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/cli/README.md",
+    "source_line": 158,
+    "visual_group": "Optional network and memory",
+    "local_evidence": "Excluded locally"
+  },
+  {
+    "id": "cloud-control",
+    "name": "Cloud control API and read MCP",
+    "layer": "optional hosted control",
+    "input": "Authenticated scoped request",
+    "transform": "RBAC, tenant isolation, audit and evidence gates; agent MCP read-only lifecycle",
+    "output": "Structured reports, plans, trace metadata and evidence",
+    "connections": [
+      {
+        "target": "cloud",
+        "condition": "authorized scopes",
+        "relationship": "report"
+      },
+      {
+        "target": "contracts",
+        "condition": "server-authoritative contract",
+        "relationship": "validation"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/cli/README.md",
+    "source_line": 205,
+    "visual_group": "Optional network and memory",
+    "local_evidence": "Excluded locally"
+  },
+  {
+    "id": "managed-gateway",
+    "name": "Managed Caveman inference gateway",
+    "layer": "optional hosted data",
+    "input": "Explicit managed provider request",
+    "transform": "Receive and proxy request/response content through Cloud",
+    "output": "Provider response and hosted usage",
+    "connections": [
+      {
+        "target": "providers",
+        "condition": "managed inference selected",
+        "relationship": "forward"
+      },
+      {
+        "target": "cloud-control",
+        "condition": "authenticated governance",
+        "relationship": "scope"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/SECURITY.md",
+    "source_line": 43,
+    "visual_group": "Optional network and memory",
+    "local_evidence": "Excluded locally"
+  },
+  {
+    "id": "cloud-sync",
+    "name": "Authenticated dashboard metadata sync",
+    "layer": "optional hosted data",
+    "input": "Local span metadata and aggregate findings",
+    "transform": "Sync only when authenticated; raw prompt/response bodies excluded",
+    "output": "Hosted metadata",
+    "connections": [
+      {
+        "target": "cloud-control",
+        "condition": "credential present and sync enabled",
+        "relationship": "send"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/SECURITY.md",
+    "source_line": 46,
+    "visual_group": "Optional network and memory",
+    "local_evidence": "Excluded locally"
+  },
+  {
+    "id": "telemetry",
+    "name": "CLI content-free usage telemetry",
+    "layer": "optional network",
+    "input": "CLI command and aggregate token metrics",
+    "transform": "Send opt-out events and install metadata; does not send prompts/code/paths",
+    "output": "Remote usage events",
+    "connections": [
+      {
+        "target": "cloud",
+        "condition": "telemetry enabled independently of login",
+        "relationship": "usage endpoint"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/SECURITY.md",
+    "source_line": 103,
+    "visual_group": "Optional network and memory",
+    "local_evidence": "Disabled locally"
+  },
+  {
+    "id": "device-auth",
+    "name": "Device-auth package",
+    "layer": "optional auth package",
+    "input": "Operator browser approval and displayed code",
+    "transform": "Connect chosen instance; grant project scopes without creating inference key",
+    "output": "Stored connection credentials",
+    "connections": [
+      {
+        "target": "cloud",
+        "condition": "operator login authorized",
+        "relationship": "authenticate"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/packages/cli/README.md",
+    "source_line": 161,
+    "visual_group": "Optional network and memory",
+    "local_evidence": "Availability or configuration does not prove execution"
+  },
+  {
+    "id": "mode-pixel",
+    "name": "Pixel mode",
+    "layer": "mode",
+    "input": "Configured dense text candidate",
+    "transform": "Allow text-to-image transport only with explicit compatible model allowlist",
+    "output": "PNG or original text",
+    "connections": [
+      {
+        "target": "pixel",
+        "condition": "explicit mode and allowlist and successful recovery",
+        "relationship": "image policy"
+      }
+    ],
+    "source_url": "https://github.com/JuliusBrussee/caveman/blob/99aafe151a1be72be783e662858e8a0955add59f/docs/technical/toon-and-pixel.md",
+    "source_line": 64,
+    "visual_group": "Optional network and memory",
+    "local_evidence": "Excluded locally"
+  }
+]

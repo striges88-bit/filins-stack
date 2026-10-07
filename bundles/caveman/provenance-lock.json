@@ -1,0 +1,965 @@
+{
+  "release": "filin-20261007-r1",
+  "upstream": {
+    "repository": "https://github.com/JuliusBrussee/caveman",
+    "npm": "@caveman-ai/cli@2.0.1",
+    "binary_tag": "bin-v2.0.2",
+    "binary_embedded_build_commit": "aeb45e2f787c0757a8af383a291a280cb6aeb4c1",
+    "npm_publish_attestation_commit": "aeb45e2f787c0757a8af383a291a280cb6aeb4c1",
+    "attestation_check": "Parsed saved npm provenance; signature not reverified by implementation."
+  },
+  "node": {
+    "version": "v24.13.0",
+    "sha256": "d14ba95cdce1ef7dc9ad3ac74949ca5db38b27378ee30f30a23cf26f9e875a11",
+    "url": "https://nodejs.org/dist/v24.13.0/win-x64/node.exe",
+    "official_checksum_match": true,
+    "licence_url": "https://raw.githubusercontent.com/nodejs/node/v24.13.0/LICENSE",
+    "licence_sha256": "537308465103a306d0e3eecf42632b4ff1b48aaaec044e9fc10a78c81fd00b34"
+  },
+  "binaries": [
+    {
+      "path": "bin/caveman-browse.exe",
+      "sha256": "8067262b1fa69ef06f9b42d9e4d54d99ec198043e62c44fb524f0a8cb02d154a"
+    },
+    {
+      "path": "bin/caveman-engine.exe",
+      "sha256": "b66386096eb859a451f54e1fc7b75fdd27e4311c705af03ec70e18ee79c56be4"
+    },
+    {
+      "path": "bin/caveman-mcp.exe",
+      "sha256": "ac45cd468e53ce4d6e52c97ee79ed706be9a72b5d8b2b3679aa4e52ec1767361"
+    },
+    {
+      "path": "bin/caveman-proxy.exe",
+      "sha256": "040e3ff06f935c50f1c3df3635cb371018178fea781e88ba1cdb61e131a7dc36"
+    },
+    {
+      "path": "bin/caveman-shrink.exe",
+      "sha256": "44c32cb5dfbb614fd5dcbbdf5708c7fd44c758ce8719ad5ecafac5ec05f63541"
+    }
+  ],
+  "changes": [
+    "Installed local Cloud/Cavemem/Pixel exclusions and STE voice retained.",
+    "Maintained resolver and canonical dispatch guard added."
+  ],
+  "optional": {
+    "status": "PINNED_INSTALLED_IMPLEMENTATION_SNAPSHOTS",
+    "components": [
+      {
+        "name": "@caveman-ai/sdk",
+        "version": "1.2.0",
+        "path": "optional/sdk/typescript",
+        "archive_integrity": "sha512-3fJkSBbKassQQ68bLlQkaxOtqC2Elo3MNszzdnepYIcXVET5jWweqYYd474yoMQ7rdXHG9d8p0S6sRYBD/T0MA==",
+        "installed_archive_match": true,
+        "files": [
+          {
+            "path": "optional/sdk/typescript/dist/index.d.cts",
+            "sha256": "9e3617d044e4b4d18fd837f73a744079ed29d48018e472afe77dfdd639eb919a"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/index.d.ts",
+            "sha256": "7546e8381a70097f3ab24b8a66102ad905c42bec38741916fd427b5164114918"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/index.js",
+            "sha256": "7fc528256605f2f4d349fbe005c8ff94a9f7ac947ea055e7035f8601580aa730"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/index.d.cts",
+            "sha256": "cfc7f5f01726b26eb45b072bbc666798fd0c1bb7a49ea54d0ab9e8d4a76c6a84"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/index.d.ts",
+            "sha256": "acb4a683266959292ed84d91d294e9ad6e95eb32fbbc5c37cb86980b99e93b70"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/index.js",
+            "sha256": "3fd72b482f157dc902a465f8d89d1a205091dcdd250abd02d30c1072548be8e9"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/protocol.d.ts",
+            "sha256": "c6585b3b1cb3a50f31bdc0c918d5eec279649fb7699f1da4782c18d9d7eb7c01"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/protocol.js",
+            "sha256": "d1f9010054a155b33f2a20db076bd3efd4c64f497ff8121ee05a122d1e15fc3f"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/runtime.d.ts",
+            "sha256": "0b8e878766eb9c46ed1b0b44b8831607cfe0c1e8b06663d9e40c7c0a23bbe031"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/runtime.js",
+            "sha256": "49732bd8588bb81ab39f39943cf0abe11e1001e550117d79f890a499b04d3a6a"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/transport.d.ts",
+            "sha256": "70efb495ee1d8197ade050073fb648e6af935ba0abdae6e623acfd4d552488a7"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/transport.js",
+            "sha256": "43c1338ca9260fc1077b009f4045a3336b5263dc7963323ea4b98bda969a239e"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/types.d.ts",
+            "sha256": "ccb2695213ddf13662993b266a7ee9239f9bd753523eba4c5251161f96e9f8a3"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/types.js",
+            "sha256": "12b6754fb7c342aebeee43a0b687dadddc9306be2adc54b306bd3a26210c6689"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/validate.d.ts",
+            "sha256": "5b7deb2d850d208f5573ee9efdb345f30d47722e95b57071f190974998b7a278"
+          },
+          {
+            "path": "optional/sdk/typescript/dist/middleware/validate.js",
+            "sha256": "5f28ac40f7cee732302a889b8e141a08d4003221ba4c878e29f41d78929a5bf7"
+          },
+          {
+            "path": "optional/sdk/typescript/LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+          },
+          {
+            "path": "optional/sdk/typescript/NOTICE",
+            "sha256": "1119a0a0c18ef10014948099e232bb65f79a211368cfb559def0125497bf20ea"
+          },
+          {
+            "path": "optional/sdk/typescript/package.json",
+            "sha256": "c6082e662282b6f9de924fc7b7eec337f8e431c70c7cc7cbbc32cf2bb4cbd240"
+          },
+          {
+            "path": "optional/sdk/typescript/README.md",
+            "sha256": "b72df5060dc1d757affa7f290d67cf5293725629e642a8e5f8c7c658f489e591"
+          }
+        ],
+        "dependencies": {},
+        "optional_peer_dependencies": {},
+        "supportedFrameworkVersions": {},
+        "activation": false
+      },
+      {
+        "name": "@caveman-ai/middleware",
+        "version": "1.0.0",
+        "path": "optional/middleware/typescript",
+        "archive_integrity": "sha512-An2P2zTr3qmDFF2sEoA97VlbJXYLk2sOJQ/KkdNske4PAGM/x9t46AB5DaykaOVKoySlcOR9OeUjUHvtXoXjFg==",
+        "installed_archive_match": true,
+        "files": [
+          {
+            "path": "optional/middleware/typescript/dist/ai-sdk.d.cts",
+            "sha256": "9cbeaec94bcdc88856a8fc63e667d3dfea841a642cc62426d34cf6c83edc5b59"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/ai-sdk.d.ts",
+            "sha256": "ddb14c89bfef2f0df9f56ed11fe80da0b6dd3dd4a2c71b898ffa6210e5f0a5b9"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/ai-sdk.js",
+            "sha256": "8b062a779be03c0ca2c350340877ad8d8b057f03bcb9b57448f9f9c9cabacc18"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/anthropic.d.cts",
+            "sha256": "a1108aca3dd908956a5ae9717c1c8397573548708d88f5c828df3c16b10ad057"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/anthropic.d.ts",
+            "sha256": "37d71493b8872cf4e71b6917e51be2d2c63b2da6f582089e7e074bee3363b7ca"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/anthropic.js",
+            "sha256": "2053ad2fbc3fdfd800b54386261373fce3de5842004b5c0e2facf4216045b41b"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/common.d.ts",
+            "sha256": "a283a93c9d809ac3e67f291216696aeede4714d1b8cee6cef8d3221988bfbe31"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/common.js",
+            "sha256": "2776925375b1ccb7aa31f364bf5fc9d0fdba89e7c146b0584f9e5ee0e8c307d3"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/compatibility.d.cts",
+            "sha256": "1180aec5d9fc105609743a4564e259076c446e55c2ff14acf1bd3ccf790cace4"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/compatibility.d.ts",
+            "sha256": "cca5be8c6027e4e177e9791b2c3757921e0f1d0363bae32f86da8b8502cadba9"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/compatibility.js",
+            "sha256": "7b78a413b5590c858bd6d696c4ced940941e1d2c413ac77abd7a42717d11288c"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/edge.d.ts",
+            "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/edge.js",
+            "sha256": "07ec598c20846e5963ca9c364f90826516185cea40493a6b4d419a248bb3285d"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/google.d.cts",
+            "sha256": "3c2db790792c3f385ef727ca014313cd4a351ea6bb1be78171193a304c91f11b"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/google.d.ts",
+            "sha256": "089336c6bd5a69e996a28052f71c93bdfe1a021a462abce797b0490a145a976e"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/google.js",
+            "sha256": "c4fdb67e8c6f516dc926decab07de2122aa149d169f1b101583ca6236b958ce9"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/guard.d.ts",
+            "sha256": "e82b20bc413d85b54fed272a3f94dc31d9a41d6af0c1d6ac7d5e174b8faa3dbc"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/guard.js",
+            "sha256": "c28e3d980bd9270e0726c6ffe443f9eb728a321e96a4893e6fa3f33e51372c02"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/langchain-model.d.cts",
+            "sha256": "0a0e44c796245072bce84cbc86748dfbcde3253fe2eb80e3ebcef0ea6bd582a2"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/langchain-model.d.ts",
+            "sha256": "22554f79da7a029d46c210ea14c35ba3d91bc96930846ca439ba2161845cc8e9"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/langchain-model.js",
+            "sha256": "9f7690f9ca6f9b1e723e586d340102f4fbb7d4fca6435a65917b2413ba5a11cb"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/langchain.d.cts",
+            "sha256": "3aa1247658bc4b8e80611878957ac4000864b020a0a11c744722b679bc99df8b"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/langchain.d.ts",
+            "sha256": "ba13bb995aee77ce679487e3a24f0733c894b762c8bbba8411c35d7d7ca8a0c2"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/langchain.js",
+            "sha256": "7b97a67196dc0bc2244051ea982504fcaaff87d9cd1ea200fe4885aec0a8e8f6"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/mastra.d.cts",
+            "sha256": "8a2f5e71a9c3c590d5d11a397f7057e127105fd5c21a2f30a7015bf8c16405c5"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/mastra.d.ts",
+            "sha256": "ae80375fcfa2bff5457b14b3f110d4aca2e72fb8af3967ee4318967fec8c4c25"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/mastra.js",
+            "sha256": "ca81dc407e9770b62e70436dfda08b6c10004660f32d8545d99e6ddf8aacc094"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/mcp.d.cts",
+            "sha256": "bab04e6d3badff857562e2b469d1cb4264adb036c9aaf9cd3fa379b99b4db2a9"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/mcp.d.ts",
+            "sha256": "c03cf7d3125fb425e167f6f4bf8f42569769bf960a7b2923fad4122c28ca3960"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/mcp.js",
+            "sha256": "4d24f99204c2013ae79df039e1c9d9b81e1e8604abd02c3eafa5a8814fd456f3"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/openai.d.cts",
+            "sha256": "205d2f3d116960398fa0534d520ee410bb5fb2a228efcb3eb0f0382ed6e74cdb"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/openai.d.ts",
+            "sha256": "cba260fad1cab4549f44da248d471f2edee1fc739e517dc0e07901882f36af2c"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/openai.js",
+            "sha256": "f99146c8e93c5ac04d02cc8e56d08475b767583eb01fe6527881da2e3570a161"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/provider-leaves.d.ts",
+            "sha256": "97e9e193955a430204b366b2b14715c9fc1da6ce26026e0dde84c12983f04e45"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/provider-leaves.js",
+            "sha256": "890e89f986ad39ef70f0795460aa7ca836d63295b9867359498aba826f890e03"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/provider-response.d.ts",
+            "sha256": "6725c2480005a4928b933eb2aac57519901d4d196011963fa96cc1993a2c61a7"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/provider-response.js",
+            "sha256": "d41e66350e4b5dac0ebc89d9fad00279820d4dd09cfaae95d6b480455417e302"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/strands.d.cts",
+            "sha256": "f2ab05a1833a56cff96f38d7d9317cfe8c056d4a5ea6436a124d198803037728"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/strands.d.ts",
+            "sha256": "2167e9cc2649d4bad1a2270c36e5d2c1670142d458c69dfa1e44b686079d20ce"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/strands.js",
+            "sha256": "33adf14e7c21a65e58521d9ffffb76347a900fc1a3595540a5388f046c103753"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/transport.d.ts",
+            "sha256": "2c4a83f89e2e2ea90eb9ea7be8932d39c07034ce27bc1bb77f086dbd71f776eb"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/transport.js",
+            "sha256": "5c0cc4e597cd0de5c888232442077e1d357228b5854cf06931b89f1907527938"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/versions.d.ts",
+            "sha256": "7e251dd8eebedc7db5d2b0c545dd24eb371868ae0e0fd341403da7b8ab2ba9c8"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/versions.js",
+            "sha256": "01b8393ea855660d5930020d81d55d952a60e77630cfd2c7a241202db2edf5a6"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/wire.d.ts",
+            "sha256": "0936ed72eeb06652bf36d2068a8893a3c172787b9df73b2d2d08209ea1cfb977"
+          },
+          {
+            "path": "optional/middleware/typescript/dist/wire.js",
+            "sha256": "e6ceda3f8c49e27ff0436e5f18515037d072fa02ce90e0fbc7775e264ab39cac"
+          },
+          {
+            "path": "optional/middleware/typescript/LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+          },
+          {
+            "path": "optional/middleware/typescript/NOTICE",
+            "sha256": "1119a0a0c18ef10014948099e232bb65f79a211368cfb559def0125497bf20ea"
+          },
+          {
+            "path": "optional/middleware/typescript/package.json",
+            "sha256": "a64fb358a13da0684dd1028d286dbb2f2c8e122f2e4393789f01ced83fd47926"
+          },
+          {
+            "path": "optional/middleware/typescript/README.md",
+            "sha256": "b6bd73b11283a1e5251ac575c16d26c2887621fc00a9b983dfb073135fec81c4"
+          }
+        ],
+        "dependencies": {
+          "@caveman-ai/sdk": "^1.2.0"
+        },
+        "optional_peer_dependencies": {
+          "ai": "*",
+          "@ai-sdk/provider": "*",
+          "openai": "*",
+          "@anthropic-ai/sdk": "*",
+          "@google/genai": "*",
+          "langchain": "*",
+          "@langchain/core": "*",
+          "@langchain/langgraph": "*",
+          "@strands-agents/sdk": "*",
+          "@mastra/core": "*",
+          "@modelcontextprotocol/sdk": "*"
+        },
+        "supportedFrameworkVersions": {
+          "ai": ">=7.0.94 <8",
+          "@ai-sdk/provider": ">=4.0.11 <5",
+          "openai": ">=7.12.1 <8",
+          "@anthropic-ai/sdk": ">=0.124.0 <0.129",
+          "@google/genai": ">=2.21.0 <3",
+          "langchain": ">=1.5.10 <2",
+          "@langchain/core": ">=1.2.9 <2",
+          "@strands-agents/sdk": ">=1.17.0 <2",
+          "@mastra/core": ">=1.65.0 <2",
+          "@modelcontextprotocol/sdk": ">=1.30.0 <2"
+        },
+        "activation": false
+      },
+      {
+        "name": "Chrome MV3 unpacked extension",
+        "version": "1.2.0",
+        "path": "optional/chrome-extension",
+        "source_commit": "99aafe151a1be72be783e662858e8a0955add59f",
+        "installed_stage_match": true,
+        "files": [
+          {
+            "path": "optional/chrome-extension/fonts/geist-mono.woff2",
+            "sha256": "3ef2c50dc1042ebfa89ca66bb6901e9dde5737970547c21b4de7a44dfb2ab948"
+          },
+          {
+            "path": "optional/chrome-extension/fonts/geist-sans.woff2",
+            "sha256": "46525b05bbf4527d263f8624ca7024c7d0dce3c64430267d30c31c6dd3821e4d"
+          },
+          {
+            "path": "optional/chrome-extension/fonts/GEIST_LICENSE.txt",
+            "sha256": "930853ee1daa68554d9e35c8a9175affb74f699fad9a5da6ee5ebe76379d9137"
+          },
+          {
+            "path": "optional/chrome-extension/icons/icon128.png",
+            "sha256": "da35da1341f89d5e3b8c30485651a1fbfbbba6a4bab93bf03da7752ecfcbca55"
+          },
+          {
+            "path": "optional/chrome-extension/icons/icon16.png",
+            "sha256": "53a219f94dd151013d9b6dc70afa3091ccbabce7af4d280fe999f2df8815424c"
+          },
+          {
+            "path": "optional/chrome-extension/icons/icon32.png",
+            "sha256": "c0dacfb1fcb13b6f178f53682a171fcd922da70b031108bd2687a1c045d4d6d7"
+          },
+          {
+            "path": "optional/chrome-extension/icons/icon48.png",
+            "sha256": "2a33142714aaf17de1ee058f77d81e0d377e4f4ae8f4fdcbbf5488b4f9495631"
+          },
+          {
+            "path": "optional/chrome-extension/LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+          },
+          {
+            "path": "optional/chrome-extension/manifest.json",
+            "sha256": "9b89550b77031c87f82474890f721e7595d1ed81084557c213a795f7ff9cf973"
+          },
+          {
+            "path": "optional/chrome-extension/popup.css",
+            "sha256": "76cdf96044ef0e1e37d26ebd7b202b2c5f63ee84855dad34e9dd85121c3232b3"
+          },
+          {
+            "path": "optional/chrome-extension/popup.html",
+            "sha256": "a67302d96544647d29f19dd95a295de4f4d1fa0de5afe3ba80954e8bd05b45eb"
+          },
+          {
+            "path": "optional/chrome-extension/popup.js",
+            "sha256": "687ece98d02dd8c36f06a100adddb7ed21559490d188488d76073f16817d9dcf"
+          },
+          {
+            "path": "optional/chrome-extension/PRIVACY.md",
+            "sha256": "67eef1779e22bb22551f40330a1da2937a724925df239090a2643ebcf7abd397"
+          },
+          {
+            "path": "optional/chrome-extension/src/background.js",
+            "sha256": "46310cdcae73b4ee06696409ebb3e99b9282413d2d55b5fb13341b5c610c16d2"
+          },
+          {
+            "path": "optional/chrome-extension/src/caveman.js",
+            "sha256": "ef9f3291d88dcac196797f6f84c96fdaf08f71081fa92b798ff5ee7164e6b6b6"
+          },
+          {
+            "path": "optional/chrome-extension/src/directive.js",
+            "sha256": "440ab969d919b2e050b60f305de5f59b78dd5a8498d0c1cca60a2d9d675b611e"
+          },
+          {
+            "path": "optional/chrome-extension/src/indicator.css",
+            "sha256": "5516011030b1c43df26f357a186a96c6b330218df0957a9b9426ebeb2da6ca0f"
+          }
+        ],
+        "permissions": [
+          "storage"
+        ],
+        "storage": "Chrome storage.sync settings",
+        "activation": false
+      }
+    ],
+    "python_boundary": "Python SDK/middleware are matching-commit license-only snapshots. No installed Python package was observed in C:/Python314/Lib/site-packages.",
+    "pi_extension": "Separate Pi integration stays as cli/dist/caveman-pi-extension.mjs. It is not the Chrome extension.",
+    "activation": false
+  },
+  "installed_input_files": [
+    {
+      "path": "cli/dist/agent-mcp.js",
+      "sha256": "7296ceb1d09d34f92deb902f417f5e85212d501e52a312d94f742a7b920155c2"
+    },
+    {
+      "path": "cli/dist/agent-skills.generated.js",
+      "sha256": "10d5bf9921839af24e6dba89709b1f0c78c29e87ebd654b44b50dba159d91748"
+    },
+    {
+      "path": "cli/dist/agents.generated.js",
+      "sha256": "2e27e7abeef6389ddb29c916dd7b77bd33877bf411fc67846725fad4d44648ae"
+    },
+    {
+      "path": "cli/dist/binaries.generated.js",
+      "sha256": "75ba1d44a73467a7692b7d7e7bff4ffc49f4eaaa89cabd9e903f6c59c28bda97"
+    },
+    {
+      "path": "cli/dist/caveman-delegate-mcp.mjs",
+      "sha256": "af087ecdf1d5be64855a5edddba7b872b62be324ef60a9d3cbc3607da9431fc2"
+    },
+    {
+      "path": "cli/dist/caveman-pi-extension.mjs",
+      "sha256": "33601170e873b9874f528cf513e977c3338dcb24667938c98f2a83cae24ff341"
+    },
+    {
+      "path": "cli/dist/git-safe.js",
+      "sha256": "69e33b0fddba937cb16bd0972b701e8eb4ec8508b40450ff173de87295ca7674"
+    },
+    {
+      "path": "cli/dist/index.js",
+      "sha256": "531ff68e7cbea9b97acc42098057d773fe3e008c99e23a64bb09026737f7ffbe"
+    },
+    {
+      "path": "cli/dist/learn-autopilot.js",
+      "sha256": "7ad69345cc391f20b0c3f86f7d821fac36687fd42d605cd002bddc402d448d0c"
+    },
+    {
+      "path": "cli/dist/learn-trends.js",
+      "sha256": "e3b7a6e7a855ddef187ed67dfd7fc591bf2a871f018d0c1b3ed6e8288432fe30"
+    },
+    {
+      "path": "cli/dist/learn-tui.js",
+      "sha256": "7bad23e1c6c509ba9cc81f687968535a54c0344405bf0a8b698d088b3c3774f5"
+    },
+    {
+      "path": "cli/dist/native-hook-fast.js",
+      "sha256": "8014d9a76b52353bfd4cdb5f07b37cd902b9d626bee09508464286f3ea65e787"
+    },
+    {
+      "path": "cli/dist/native-pack.generated.js",
+      "sha256": "173614ac1cb1b1bf5ba3714aab8dadfe1aa3474e63f422b642cbc22812052732"
+    },
+    {
+      "path": "cli/dist/openclaw-provider-compat.js",
+      "sha256": "06588ee706d0e3746173d6feb71a3e87686fc6740f98958dff9ac0e6375f564d"
+    },
+    {
+      "path": "cli/dist/portable-command.js",
+      "sha256": "e83b036fa236ba2bb88c3e771945f76f1133f11efa97a557b30dca4418e790ba"
+    },
+    {
+      "path": "cli/dist/portable-process.mjs",
+      "sha256": "23520321740e602cec791044b57c3c8891999c733c81fe958ebec0d71da8a686"
+    },
+    {
+      "path": "cli/dist/practices.generated.js",
+      "sha256": "bcf80ba90e380ba69cfc646636c845719ec6a3c4f731ab0458b3a4446609f30e"
+    },
+    {
+      "path": "cli/dist/provider-routing.js",
+      "sha256": "5a932475e1c5252740a0af9afa7ccc34d2c0295485cdc5e4e973f42bdaea4523"
+    },
+    {
+      "path": "cli/dist/proxy-fetch.js",
+      "sha256": "1cfe077e41dac886873cc0b6fc33cd34b66cd0211c24b52e3ac768e79eb57279"
+    },
+    {
+      "path": "cli/dist/recipes.generated.js",
+      "sha256": "d8e3e9c5ca85f0ad940943c56aab7b46be146d8d6badc4ff46bb712d3a2c5cde"
+    },
+    {
+      "path": "cli/dist/reserved-verbs.generated.js",
+      "sha256": "49bfe0f3001140914aed569a54439b12d7ec6b20237c7073f64bc47b850af6cc"
+    },
+    {
+      "path": "cli/dist/stats-cli.js",
+      "sha256": "b1b2c388d5bd79e940f8a08d43cd3035208da1f96b21fba818938eaa48d4630e"
+    },
+    {
+      "path": "cli/dist/verified-methods.mirror.js",
+      "sha256": "2a8d17e6c9c4c679a8708b7ab5d000c2afa5872639aafb4d1e1c9efcae84a854"
+    },
+    {
+      "path": "cli/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "cli/NOTICE",
+      "sha256": "27670775413136ea3c79a450e29a8985b87159ab8ed7e8d9afc97798b9435e51"
+    },
+    {
+      "path": "cli/package.json",
+      "sha256": "3940674a35b9b5eef2317233265f385af93332a2920a86080758c87c4f785170"
+    },
+    {
+      "path": "cli/README.md",
+      "sha256": "11b1ac3a62128fc72bff7d4ee3376b0596219e9ae20fd52801ce80b4e6d3f180"
+    }
+  ],
+  "input_boundary": "Installed npm package contains previously reviewed local adaptations. Hashes identify those bytes, not pristine npm archive bytes.",
+  "skill_input_files": [
+    {
+      "path": "skills/cavecrew/README.md",
+      "sha256": "42e9972951719548b83402c726e8c07a01305e609c3d49626d1cab7dc5af7315"
+    },
+    {
+      "path": "skills/cavecrew/SKILL.md",
+      "sha256": "702b2f1eaa795936c6019b45b28dc3cd93d9befb04205cb947aa8d78301b05ff"
+    },
+    {
+      "path": "skills/caveman/README.md",
+      "sha256": "cbe0c714a696d95e8378858c812f3f3157fabf6929cc4cd28f3dcd48123b975b"
+    },
+    {
+      "path": "skills/caveman/SKILL.md",
+      "sha256": "ec6b4e9f21f6cc95aaa594aeda5b5c5eee2f4c4fa1813f09627504255eda04d8"
+    },
+    {
+      "path": "skills/caveman-commit/README.md",
+      "sha256": "a2e82924b487fc1845114c247b47c2d3c2d1bd60f90bbfa60e9831319eb964fa"
+    },
+    {
+      "path": "skills/caveman-commit/SKILL.md",
+      "sha256": "efc8841b2be57e5904033ecf5437d5f27902b2814f7c1fb6b3fec87371d7a01e"
+    },
+    {
+      "path": "skills/caveman-compress/README.md",
+      "sha256": "66cbda47987e9a90eb485a8c63d65f78494a023e37e84031a782a4e7bc379a24"
+    },
+    {
+      "path": "skills/caveman-compress/scripts/validate.py",
+      "sha256": "07e7b76e0aefeb44fc08fb43af3b7098f75e950d4dbb7a12f5c3bce0713af31f"
+    },
+    {
+      "path": "skills/caveman-compress/SECURITY.md",
+      "sha256": "7393f90a3a9953251554a68ad2daef273d8d656d050e2ad47a483e76c8223b2d"
+    },
+    {
+      "path": "skills/caveman-compress/SKILL.md",
+      "sha256": "02ca349fdbb5ce7a3fd0cdcea353b07aac3b5cc1110bf1815b834a8fd1b09af3"
+    },
+    {
+      "path": "skills/caveman-explore/package.json",
+      "sha256": "ab6c6186b9b87d4a68183625d23ef422e05e99aeab9228cac2924fc5391dc7a6"
+    },
+    {
+      "path": "skills/caveman-explore/SKILL.md",
+      "sha256": "4194ce7b34e9feb9b003d0af4daebac59bc82ecb56cf4e62190554c59b839359"
+    },
+    {
+      "path": "skills/caveman-explore/tests/skill-file.test.mjs",
+      "sha256": "dad62b37f948351424438b3ae272e8b4c8462a78b5ace86ded9f0f7d136edb5c"
+    },
+    {
+      "path": "skills/caveman-help/README.md",
+      "sha256": "b88d5e36dfab3a681f52d6b4bfcdbe188aebd2ef9decf7f58b025a75867810e3"
+    },
+    {
+      "path": "skills/caveman-help/SKILL.md",
+      "sha256": "9665faa0704f4363481ba82c122c89f9e4861ba1d9041d485bb357068ee01694"
+    },
+    {
+      "path": "skills/caveman-learn/CLAUDE.md",
+      "sha256": "d954541f8cd9805a5ffaa3b0e078109f355067795b129e7c01071a94fd7ca700"
+    },
+    {
+      "path": "skills/caveman-learn/package.json",
+      "sha256": "8a6b98d06c1b12a7b0378a33f16d12432095bc80526338b7d0bb42f3ccd734f9"
+    },
+    {
+      "path": "skills/caveman-learn/README.md",
+      "sha256": "ddfc56c25014003ef38de2e15fb712872183ab16c05db47aa342e775b13d3fe4"
+    },
+    {
+      "path": "skills/caveman-learn/SKILL.md",
+      "sha256": "91ef1cd3ccc4714df339336ee604ac2ba6349cc41a0f5cf24e0b3a1d3b1e8f82"
+    },
+    {
+      "path": "skills/caveman-learn/tests/index.js",
+      "sha256": "93e0e2e9f6f2ec9ebf0c1ef494ecc0a083f82317aca074e20a1b0b2e50da2e05"
+    },
+    {
+      "path": "skills/caveman-learn/tests/skill-file.test.mjs",
+      "sha256": "77f8e246c2cf426d324186db6408c5376028956d3f42d6adb78b64e3ef417088"
+    },
+    {
+      "path": "skills/caveman-review/README.md",
+      "sha256": "a06403b2722a069a9a2b0011772ae73296e68b4e46ace2f4b42b4ea546052b64"
+    },
+    {
+      "path": "skills/caveman-review/SKILL.md",
+      "sha256": "46e0eebf3987d83052048309a62547be94ccdebb495191db15471075c5415725"
+    },
+    {
+      "path": "skills/caveman-stats/README.md",
+      "sha256": "8da1a84ea911894e1e32784a8c1ad2bfe8be6e18cf3e768c778f8d70965ddde5"
+    },
+    {
+      "path": "skills/caveman-stats/SKILL.md",
+      "sha256": "f1b19a5458709a38344606ba018c56d8500d0ccdf6282fa2372b040e58b25220"
+    },
+    {
+      "path": "skills/megacave/README.md",
+      "sha256": "b44534d7646557721c3c4980c23740c57355fec63cc0c386cc384b51e6d9d7a4"
+    },
+    {
+      "path": "skills/megacave/SKILL.md",
+      "sha256": "5d69727ef7f1436cda45d1baa9aa2296b9e868a6784db2a0343daea790d85865"
+    },
+    {
+      "path": "skills/ultracave/README.md",
+      "sha256": "da09710d0ea90686981724685881bdfc6947d221f9a35109139b8ab811759768"
+    },
+    {
+      "path": "skills/ultracave/SKILL.md",
+      "sha256": "38b7eb2957814fea59fb07f52f82d51fce57bbc982328ead74a4c037a6ab17eb"
+    },
+    {
+      "path": "roles/cavecrew-builder.toml",
+      "sha256": "549ce57c1859025fc015ecaf0fef792ca70251563c65367aab37f344dc41eb92"
+    },
+    {
+      "path": "roles/cavecrew-investigator.toml",
+      "sha256": "3896c4032fa3489623bb2cc7c68614a86e53e46cf4d4592bbecc1affa59508a2"
+    },
+    {
+      "path": "roles/cavecrew-reviewer.toml",
+      "sha256": "bbba69bbffc79b526c0bbb8abf7797a194fd693ece22b4acee130c24c326f488"
+    }
+  ],
+  "filins_base": {
+    "repository": "https://github.com/striges88-bit/filins-stack",
+    "commit": "612148ff9727d20dcbfa83ded523a05f77d6f703"
+  },
+  "maintained_skill_files": [
+    {
+      "path": "skills/cavecrew/README.md",
+      "sha256": "42e9972951719548b83402c726e8c07a01305e609c3d49626d1cab7dc5af7315"
+    },
+    {
+      "path": "skills/cavecrew/SKILL.md",
+      "sha256": "702b2f1eaa795936c6019b45b28dc3cd93d9befb04205cb947aa8d78301b05ff"
+    },
+    {
+      "path": "skills/caveman/README.md",
+      "sha256": "cbe0c714a696d95e8378858c812f3f3157fabf6929cc4cd28f3dcd48123b975b"
+    },
+    {
+      "path": "skills/caveman/SKILL.md",
+      "sha256": "ec6b4e9f21f6cc95aaa594aeda5b5c5eee2f4c4fa1813f09627504255eda04d8"
+    },
+    {
+      "path": "skills/caveman-commit/README.md",
+      "sha256": "a2e82924b487fc1845114c247b47c2d3c2d1bd60f90bbfa60e9831319eb964fa"
+    },
+    {
+      "path": "skills/caveman-commit/SKILL.md",
+      "sha256": "efc8841b2be57e5904033ecf5437d5f27902b2814f7c1fb6b3fec87371d7a01e"
+    },
+    {
+      "path": "skills/caveman-compress/README.md",
+      "sha256": "66cbda47987e9a90eb485a8c63d65f78494a023e37e84031a782a4e7bc379a24"
+    },
+    {
+      "path": "skills/caveman-compress/scripts/validate.py",
+      "sha256": "07e7b76e0aefeb44fc08fb43af3b7098f75e950d4dbb7a12f5c3bce0713af31f"
+    },
+    {
+      "path": "skills/caveman-compress/SECURITY.md",
+      "sha256": "7393f90a3a9953251554a68ad2daef273d8d656d050e2ad47a483e76c8223b2d"
+    },
+    {
+      "path": "skills/caveman-compress/SKILL.md",
+      "sha256": "02ca349fdbb5ce7a3fd0cdcea353b07aac3b5cc1110bf1815b834a8fd1b09af3"
+    },
+    {
+      "path": "skills/caveman-explore/package.json",
+      "sha256": "ab6c6186b9b87d4a68183625d23ef422e05e99aeab9228cac2924fc5391dc7a6"
+    },
+    {
+      "path": "skills/caveman-explore/SKILL.md",
+      "sha256": "4194ce7b34e9feb9b003d0af4daebac59bc82ecb56cf4e62190554c59b839359"
+    },
+    {
+      "path": "skills/caveman-explore/tests/skill-file.test.mjs",
+      "sha256": "dad62b37f948351424438b3ae272e8b4c8462a78b5ace86ded9f0f7d136edb5c"
+    },
+    {
+      "path": "skills/caveman-help/README.md",
+      "sha256": "b88d5e36dfab3a681f52d6b4bfcdbe188aebd2ef9decf7f58b025a75867810e3"
+    },
+    {
+      "path": "skills/caveman-help/SKILL.md",
+      "sha256": "7ecd1997506562c0c35a31db2786226d3063fbcd245ec5b8afaf72509ab8cdad"
+    },
+    {
+      "path": "skills/caveman-learn/CLAUDE.md",
+      "sha256": "d954541f8cd9805a5ffaa3b0e078109f355067795b129e7c01071a94fd7ca700"
+    },
+    {
+      "path": "skills/caveman-learn/package.json",
+      "sha256": "8a6b98d06c1b12a7b0378a33f16d12432095bc80526338b7d0bb42f3ccd734f9"
+    },
+    {
+      "path": "skills/caveman-learn/README.md",
+      "sha256": "ddfc56c25014003ef38de2e15fb712872183ab16c05db47aa342e775b13d3fe4"
+    },
+    {
+      "path": "skills/caveman-learn/SKILL.md",
+      "sha256": "bbe75f643f756194475f1349c7e70275f4729a29bada50482179e17c787927dd"
+    },
+    {
+      "path": "skills/caveman-learn/tests/index.js",
+      "sha256": "93e0e2e9f6f2ec9ebf0c1ef494ecc0a083f82317aca074e20a1b0b2e50da2e05"
+    },
+    {
+      "path": "skills/caveman-learn/tests/skill-file.test.mjs",
+      "sha256": "77f8e246c2cf426d324186db6408c5376028956d3f42d6adb78b64e3ef417088"
+    },
+    {
+      "path": "skills/caveman-review/README.md",
+      "sha256": "a06403b2722a069a9a2b0011772ae73296e68b4e46ace2f4b42b4ea546052b64"
+    },
+    {
+      "path": "skills/caveman-review/SKILL.md",
+      "sha256": "46e0eebf3987d83052048309a62547be94ccdebb495191db15471075c5415725"
+    },
+    {
+      "path": "skills/caveman-stats/README.md",
+      "sha256": "8da1a84ea911894e1e32784a8c1ad2bfe8be6e18cf3e768c778f8d70965ddde5"
+    },
+    {
+      "path": "skills/caveman-stats/SKILL.md",
+      "sha256": "7603fbd0f724f47e97389fcc66084f6b5c390c7596f5f009ea3285044e41939b"
+    },
+    {
+      "path": "skills/megacave/README.md",
+      "sha256": "b44534d7646557721c3c4980c23740c57355fec63cc0c386cc384b51e6d9d7a4"
+    },
+    {
+      "path": "skills/megacave/SKILL.md",
+      "sha256": "5d69727ef7f1436cda45d1baa9aa2296b9e868a6784db2a0343daea790d85865"
+    },
+    {
+      "path": "skills/ultracave/README.md",
+      "sha256": "da09710d0ea90686981724685881bdfc6947d221f9a35109139b8ab811759768"
+    },
+    {
+      "path": "skills/ultracave/SKILL.md",
+      "sha256": "38b7eb2957814fea59fb07f52f82d51fce57bbc982328ead74a4c037a6ab17eb"
+    },
+    {
+      "path": "roles/cavecrew-builder.toml",
+      "sha256": "549ce57c1859025fc015ecaf0fef792ca70251563c65367aab37f344dc41eb92"
+    },
+    {
+      "path": "roles/cavecrew-investigator.toml",
+      "sha256": "3896c4032fa3489623bb2cc7c68614a86e53e46cf4d4592bbecc1affa59508a2"
+    },
+    {
+      "path": "roles/cavecrew-reviewer.toml",
+      "sha256": "bbba69bbffc79b526c0bbb8abf7797a194fd693ece22b4acee130c24c326f488"
+    }
+  ],
+  "maintained_cli_files": [
+    {
+      "path": "cli/dist/agent-mcp.js",
+      "sha256": "7296ceb1d09d34f92deb902f417f5e85212d501e52a312d94f742a7b920155c2"
+    },
+    {
+      "path": "cli/dist/agent-skills.generated.js",
+      "sha256": "10d5bf9921839af24e6dba89709b1f0c78c29e87ebd654b44b50dba159d91748"
+    },
+    {
+      "path": "cli/dist/agents.generated.js",
+      "sha256": "2e27e7abeef6389ddb29c916dd7b77bd33877bf411fc67846725fad4d44648ae"
+    },
+    {
+      "path": "cli/dist/binaries.generated.js",
+      "sha256": "75ba1d44a73467a7692b7d7e7bff4ffc49f4eaaa89cabd9e903f6c59c28bda97"
+    },
+    {
+      "path": "cli/dist/caveman-delegate-mcp.mjs",
+      "sha256": "af087ecdf1d5be64855a5edddba7b872b62be324ef60a9d3cbc3607da9431fc2"
+    },
+    {
+      "path": "cli/dist/caveman-pi-extension.mjs",
+      "sha256": "33601170e873b9874f528cf513e977c3338dcb24667938c98f2a83cae24ff341"
+    },
+    {
+      "path": "cli/dist/git-safe.js",
+      "sha256": "69e33b0fddba937cb16bd0972b701e8eb4ec8508b40450ff173de87295ca7674"
+    },
+    {
+      "path": "cli/dist/index.js",
+      "sha256": "844803ba7e65b15ae31c35fe4874a6c063e5dfa75b7f549f3db89a7d6d1ade37"
+    },
+    {
+      "path": "cli/dist/learn-autopilot.js",
+      "sha256": "7ad69345cc391f20b0c3f86f7d821fac36687fd42d605cd002bddc402d448d0c"
+    },
+    {
+      "path": "cli/dist/learn-trends.js",
+      "sha256": "e3b7a6e7a855ddef187ed67dfd7fc591bf2a871f018d0c1b3ed6e8288432fe30"
+    },
+    {
+      "path": "cli/dist/learn-tui.js",
+      "sha256": "7bad23e1c6c509ba9cc81f687968535a54c0344405bf0a8b698d088b3c3774f5"
+    },
+    {
+      "path": "cli/dist/maintained-release.mjs",
+      "sha256": "3f016c9d98ae64a59336a35b3013be7380532f1e63f15919b8dd20c0a4297e00"
+    },
+    {
+      "path": "cli/dist/native-hook-fast.js",
+      "sha256": "561041aab3ea6c441328b40aab14590bcd73db3cd0aa034ad609101b6e528447"
+    },
+    {
+      "path": "cli/dist/native-pack.generated.js",
+      "sha256": "173614ac1cb1b1bf5ba3714aab8dadfe1aa3474e63f422b642cbc22812052732"
+    },
+    {
+      "path": "cli/dist/openclaw-provider-compat.js",
+      "sha256": "06588ee706d0e3746173d6feb71a3e87686fc6740f98958dff9ac0e6375f564d"
+    },
+    {
+      "path": "cli/dist/portable-command.js",
+      "sha256": "e83b036fa236ba2bb88c3e771945f76f1133f11efa97a557b30dca4418e790ba"
+    },
+    {
+      "path": "cli/dist/portable-process.mjs",
+      "sha256": "23520321740e602cec791044b57c3c8891999c733c81fe958ebec0d71da8a686"
+    },
+    {
+      "path": "cli/dist/practices.generated.js",
+      "sha256": "bcf80ba90e380ba69cfc646636c845719ec6a3c4f731ab0458b3a4446609f30e"
+    },
+    {
+      "path": "cli/dist/provider-routing.js",
+      "sha256": "5a932475e1c5252740a0af9afa7ccc34d2c0295485cdc5e4e973f42bdaea4523"
+    },
+    {
+      "path": "cli/dist/proxy-fetch.js",
+      "sha256": "1cfe077e41dac886873cc0b6fc33cd34b66cd0211c24b52e3ac768e79eb57279"
+    },
+    {
+      "path": "cli/dist/recipes.generated.js",
+      "sha256": "d8e3e9c5ca85f0ad940943c56aab7b46be146d8d6badc4ff46bb712d3a2c5cde"
+    },
+    {
+      "path": "cli/dist/reserved-verbs.generated.js",
+      "sha256": "49bfe0f3001140914aed569a54439b12d7ec6b20237c7073f64bc47b850af6cc"
+    },
+    {
+      "path": "cli/dist/stats-cli.js",
+      "sha256": "b1b2c388d5bd79e940f8a08d43cd3035208da1f96b21fba818938eaa48d4630e"
+    },
+    {
+      "path": "cli/dist/verified-methods.mirror.js",
+      "sha256": "2a8d17e6c9c4c679a8708b7ab5d000c2afa5872639aafb4d1e1c9efcae84a854"
+    },
+    {
+      "path": "cli/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "cli/NOTICE",
+      "sha256": "27670775413136ea3c79a450e29a8985b87159ab8ed7e8d9afc97798b9435e51"
+    },
+    {
+      "path": "cli/package.json",
+      "sha256": "3940674a35b9b5eef2317233265f385af93332a2920a86080758c87c4f785170"
+    },
+    {
+      "path": "cli/README.md",
+      "sha256": "11b1ac3a62128fc72bff7d4ee3376b0596219e9ae20fd52801ce80b4e6d3f180"
+    }
+  ],
+  "launchers": [
+    {
+      "path": "native-hook.ps1",
+      "sha256": "4d90d8d14c61b8c85a39cb8fc09ad37aece9ed33758cee89a88c9dc87ca7ad9c"
+    },
+    {
+      "path": "caveman.ps1",
+      "sha256": "9270aede2d077d3eaf1c6155f312d18a4ea15090f731b9e47e430fe922c45e4a"
+    }
+  ]
+}
