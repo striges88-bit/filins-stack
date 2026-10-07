@@ -1,0 +1,80 @@
+--- a/cli/dist/index.js
++++ b/cli/dist/index.js
+@@ -1,4 +1,6 @@
+ #!/usr/bin/env node
++import { maintainedBinary, bindRelease, guardDispatch } from "./maintained-release.mjs";
++bindRelease();
+ import { execFileSync, spawn, spawnSync } from "node:child_process";
+ import { accessSync, appendFileSync, closeSync, cpSync, existsSync, fchmodSync, fsyncSync, chmodSync, constants, copyFileSync, linkSync, mkdirSync, mkdtempSync, openSync, lstatSync, readdirSync, readFileSync, realpathSync, renameSync, rmSync, statSync, symlinkSync, unlinkSync, utimesSync, writeFileSync, writeSync, } from "node:fs";
+ import { chmod, mkdir, open, readFile, rename, writeFile } from "node:fs/promises";
+@@ -450,6 +452,7 @@
+ let telemetryCommandSent = false;
+ let telemetryEphemeralId = "";
+ async function main() {
++    guardDispatch(currentInvocation.verb, currentInvocation.argv);
+     // Local installation contract: user excluded Cloud and durable memory.
+     // Guard before any telemetry/config/network handling, including native bundles.
+     if (CLOUD_VERBS.has(currentInvocation.verb)
+@@ -11282,22 +11285,8 @@
+     catch { /* not ours / Windows */ }
+     return home;
+ }
+-// cavemanBin resolves one of caveman's own Go binaries (proxy/engine/mcp/browse):
+-// explicit env override first, then PATH, then ~/.caveman/bin — the directory the
+-// install script and the missing-binary panels tell users to build into, so
+-// following those instructions works without also editing PATH. Falls back to the
+-// bare name so callers' existing missing-binary handling still triggers.
+ function cavemanBin(name, envVar) {
+-    const explicit = process.env[envVar];
+-    if (explicit)
+-        return explicit;
+-    const onPath = which(name);
+-    if (onPath)
+-        return onPath;
+-    const local = join(cavemanHome(), "bin", binaryInstallFilename(name));
+-    if (isExecutable(local))
+-        return local;
+-    return name;
++    return maintainedBinary(name);
+ }
+ function mcpServerMarkerPath(agentId, serverName) {
+     return join(cavemanHome(), "mcp", serverName === "caveman" ? `${agentId}.json` : `${agentId}.${serverName}.json`);
+--- a/cli/dist/native-hook-fast.js
++++ b/cli/dist/native-hook-fast.js
+@@ -1,3 +1,5 @@
++import { bindRelease } from "./maintained-release.mjs";
++bindRelease();
+ import { execFileSync, spawnSync } from "node:child_process";
+ import { appendFileSync, chmodSync, lstatSync, mkdirSync, readFileSync, realpathSync, statSync } from "node:fs";
+ import { homedir } from "node:os";
+--- /dev/null
++++ b/cli/dist/maintained-release.mjs
+@@ -0,0 +1,28 @@
++import { readFileSync, statSync } from 'node:fs';
++import { fileURLToPath } from 'node:url';
++import { dirname, resolve } from 'node:path';
++export const releaseRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
++export const manifest = JSON.parse(readFileSync(resolve(releaseRoot, 'release-manifest.json'), 'utf8'));
++export function maintainedBinary(name) {
++  const component = manifest.binaries[name];
++  if (!component) throw new Error(`Unowned maintained binary: ${name}`);
++  const path = resolve(releaseRoot, component.path);
++  if (!statSync(path).isFile()) throw new Error(`Missing maintained binary: ${name}`);
++  return path;
++}
++export function bindRelease() {
++  for (const [key, value] of Object.entries(manifest.environment)) process.env[key] = value;
++  for (const [name, item] of Object.entries(manifest.binaries)) process.env[item.env] = maintainedBinary(name);
++  process.env.NODE = resolve(releaseRoot, manifest.node.path);
++  const profile = process.env.CAVEMAN_NATIVE_PROFILE?.toLowerCase();
++  if (profile === 'full-max' || !new Set(['record-only','core','core-lean-build','ledger','ccr-masking','cache-aware','full-safe']).has(profile)) {
++    process.env.CAVEMAN_NATIVE_PROFILE = process.env.CAVEMAN_WRAP_MODE === 'record' || process.env.CAVEMAN_WRAP_MODE === 'off' || process.env.CAVEMAN_NATIVE_MODE === 'record' ? 'record-only' : 'full-safe';
++  }
++  process.env.CAVEMAN_NATIVE_MODE = process.env.CAVEMAN_NATIVE_PROFILE === 'record-only' ? 'record' : 'safe';
++  if (process.env.CAVEMAN_WRAP_MODE === 'pixel') process.env.CAVEMAN_WRAP_MODE = 'compress';
++}
++export function guardDispatch(verb, argv) {
++  const deny = new Set(['update','setup','init','enable','disable','login','logout','convert','welcome']);
++  const registration = (verb === 'skills' && ['install','add','import'].includes(argv[0])) || (verb === 'mcp' && ['install','uninstall'].includes(argv[0])) || (verb === 'hooks' && !['list','status','--help','-h'].includes(argv[0])) || (verb === 'doctor' && argv.includes('--fix'));
++  if (deny.has(verb) || registration || ['wrap','run'].includes(verb)) throw new Error(`Maintained release blocks registration or update command: ${verb}`);
++}

@@ -1,0 +1,9 @@
+*.exe
+*.dll
+*.db
+*.db-shm
+*.db-wal
+__pycache__/
+*.pyc
+private-plan/
+watch-state.json
